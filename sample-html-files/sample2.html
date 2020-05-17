@@ -1,0 +1,99 @@
+<html>
+  <head>
+      <title></title>
+      <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+      <link href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous'>
+  </head>
+  <body style='width: 100vw;'>
+      <div class='card-bg {{cardData.main.class}}' style='width: 100vw; height: 55vw;'>
+          <style>
+              .center-align {
+                  text-align: center;
+              }
+          </style>
+          <div class='container-fluid'>
+              <div class='row'>
+                  <div class='col col-8' style='margin-top: 2vw;'>
+                        <h1 class='name  {{cardData.name.class}}'>
+                            <span class='{{cardData.name.textFormatting.classes}} {{cardData.name.textFormatting.underline}} {{cardData.name.textFormatting.italic}} {{cardData.name.textFormatting.bold}} {{cardData.name.textFormatting.fontSize}} {{cardData.name.textFormatting.fontStyle}} {{cardData.name.textFormatting.color}} {{cardData.name.textFormatting.bgColor}}'>
+                                {{cardData.name.value}}
+                            </span> 
+                        </h1>
+                        <h5 class='designation {{cardData.designation.class}}'>
+                            <span class='{{cardData.designation.textFormatting.classes}} {{cardData.designation.textFormatting.underline}} {{cardData.designation.textFormatting.italic}} {{cardData.designation.textFormatting.bold}} {{cardData.designation.textFormatting.fontSize}} {{cardData.designation.textFormatting.fontStyle}} {{cardData.designation.textFormatting.color}} {{cardData.designation.textFormatting.bgColor}}'>
+                                {{cardData.designation.value}}
+                            </span>
+                        </h5>
+                  </div>
+                  <div class='col col-4' style='margin-top: 2vw;'>
+                        <img class='logo {{cardData.logo.class}}' style='height: 16vw; margin: 0px auto;' src='{{cardData.logo.src}}' />
+                  </div>
+              </div>
+                <div class='row' style='height: 28vw; margin-left: 2vw;margin-top: 5vw;'>
+                    <div class ='col col-4'>
+                            <img src='{{cardData.qrcode.src}}' class='qrcode' style='position: absolute; height: 16vw; top: 5vw; left: 2vw;' />
+                    </div>
+                    <div class='col col-8'>
+                        <div class='row' style='width: 100%;height:7vw;'>
+                                <div class='col col-2'>
+                                    <h2 class='{{cardData.address.class}}'><i class='fa {{cardData.address.icon}} {{cardData.address.textFormatting.fontSize}} {{cardData.address.textFormatting.color}}'></i></h2>
+                                </div>
+                                <div class='col col-10'>
+                                        <h5 class='{{cardData.address.class}}'>
+                                            <span class='{{cardData.address.textFormatting.classes}} {{cardData.address.textFormatting.underline}} {{cardData.address.textFormatting.italic}} {{cardData.address.textFormatting.bold}} {{cardData.address.textFormatting.fontSize}} {{cardData.address.textFormatting.fontStyle}} {{cardData.address.textFormatting.color}} {{cardData.address.textFormatting.bgColor}}'>
+                                                    {{cardData.address.value}}                              
+                                            </span>
+                                        </h5>
+                                </div>
+                            </div>
+                            <div class='row' style='width: 100%;height:7vw;'>
+                                <div class='col col-2'>
+                                        <h2 class='{{cardData.phone.class}}'><i class='fa {{cardData.phone.icon}} {{cardData.phone.textFormatting.fontSize}} {{cardData.phone.textFormatting.color}}'></i></h2>
+                                </div>
+                                <div class='col col-10'>
+                                        <h4 class='{{cardData.phone.class}}'>
+                                            <span class='{{cardData.phone.textFormatting.classes}} {{cardData.phone.textFormatting.underline}} {{cardData.phone.textFormatting.italic}} {{cardData.phone.textFormatting.bold}} {{cardData.phone.textFormatting.fontSize}} {{cardData.phone.textFormatting.fontStyle}} {{cardData.phone.textFormatting.color}} {{cardData.phone.textFormatting.bgColor}}'>
+                                                {{cardData.phone.value}}
+                                            </span>
+                                        </h4>
+                                </div>
+                            </div>
+                            <div class='row' style='width: 100%;height:7vw;'>
+                                <div class='col col-2'>
+                                        <h2 class='{{cardData.email.class}}'><i class='fa {{cardData.email.icon}} {{cardData.email.textFormatting.fontSize}} {{cardData.email.textFormatting.color}}'></i></h2>
+                                </div>
+                                <div class='col col-10'>
+                                        <h4 class='{{cardData.email.class}}'>
+                                            <span class='{{cardData.email.textFormatting.classes}} {{cardData.email.textFormatting.underline}} {{cardData.email.textFormatting.italic}} {{cardData.email.textFormatting.bold}} {{cardData.email.textFormatting.fontSize}} {{cardData.email.textFormatting.fontStyle}} {{cardData.email.textFormatting.color}} {{cardData.email.textFormatting.bgColor}}'>
+                                                    {{cardData.email.value}}                              
+                                            </span>
+                                        </h4>
+                                </div>
+                            </div>
+                            <div class='row' style='width: 100%;height:7vw;'>
+                                <div class='col col-2'>
+                                        <h2 class='{{cardData.website.class}}'><i class='fa {{cardData.website.icon}} {{cardData.website.textFormatting.fontSize}} {{cardData.website.textFormatting.color}}'></i></h2>
+                                </div>
+                                <div class='col col-10'>
+                                    <h4 class='{{cardData.website.class}}'>
+                                        <span class='{{cardData.website.textFormatting.classes}} {{cardData.website.textFormatting.underline}} {{cardData.website.textFormatting.italic}} {{cardData.website.textFormatting.bold}} {{cardData.website.textFormatting.fontSize}} {{cardData.website.textFormatting.fontStyle}} {{cardData.website.textFormatting.color}} {{cardData.website.textFormatting.bgColor}}'>
+                                                {{cardData.website.value}}                              
+                                        </span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class='row' style='width: 100%;height:7vw;'>
+                                <div class='col col-12'>
+                                    <h5 class='{{cardData.tagline.class}}'>
+                                        <span class='{{cardData.tagline.textFormatting.classes}} {{cardData.tagline.textFormatting.underline}} {{cardData.tagline.textFormatting.italic}} {{cardData.tagline.textFormatting.bold}} {{cardData.tagline.textFormatting.fontSize}} {{cardData.tagline.textFormatting.fontStyle}} {{cardData.tagline.textFormatting.color}} {{cardData.tagline.textFormatting.bgColor}}'>
+                                                {{cardData.tagline.value}}                              
+                                        </span>
+                                    </h5>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+#templateScreen{
+    .logo-container{
+        height: 66px;
+        margin: 10px -50px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+    }
+    .rectangle {
+        height: 4px;
+        width: 100px;
+        background-color: #555;
+    }
+    .circle {
+        height: 30px;
+        width: 30px;
+        background-color: rgb(8, 20, 83);
+        border-radius: 50%;
+        display: inline-block;
+        display: block;
+        margin: auto;
+    }
+    .relative-position{
+        position: relative;
+    }
+    .icon-image{
+        position: absolute;
+        z-index: 1000;
+        top: 6px;
+        right: 35px;
+        color: white;
+    }
+    .heading-info {
+        font-weight: bold;
+        margin-top: 5rem;
+        text-align: center;
+        font-size: 16px !important;
+    }
+}

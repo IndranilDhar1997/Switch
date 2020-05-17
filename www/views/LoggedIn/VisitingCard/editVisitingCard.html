@@ -1,0 +1,161 @@
+<div ng-controller="EditVisitingCardController" id="EditVisitingCardScreen" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+            <div class="backdrop"></div>
+            <div class="row navbar-alignment color-bg">
+                <div class="col col-2 text-white strong">
+                    <div class="flex-grow-1 text-white">
+                        <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                    </div>
+                </div>
+                <div class="col col-8 text-white strong">
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 navbar-header text-center text-white">
+                            Edit Template
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-2 text-white strong">
+                </div>
+            </div>
+        </div>
+        <div>
+            <ons-card>
+                <div ng-bind-html="template_data"></div>
+            </ons-card>
+        </div>
+        <div class="editing-list">
+            <div class="item" ng-repeat="(key, field) in cardField">
+                <div class="" ng-if="field.format=='element'">
+                    <div ng-if="field.element=='div'">
+                        <div class="center">{{field.displayName}}</div>
+                        <div class="right">
+                            <button class="btn color-picker {{cardData[field.name]['class']}}" style="margin-top: 20px;" ng-click="component.colorPicker.method.showModal(field.name)">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="" ng-if="field.format=='imgUpload'">
+                    <div class="center">{{field.displayName}}</div>
+                    <div class="right">
+                        <button class="btn file-upload" style="margin-top: 20px;" ng-click="toggleVisible(field.name)">
+                            <i class="fa text-xxlg"
+                                ng-class="{true: 'fa-eye', false: 'fa-eye-slash'}[cardData[field.name]['visible']]"></i>
+                        </button>
+                        <button class="btn file-upload" style="margin-top: 20px;" ng-click="imgUpload(field.name)">
+                            <i class="fa fa-upload text-xxlg"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="" ng-if="field.format=='qrcode'">
+                </div>
+                <div class="" ng-if="field.format=='text'">
+                    <div class="display-block">{{field.displayName}}</div>
+                    <ons-row>
+                        <ons-col>
+                            <input type="text" class="form-control" ng-model="cardData[field.name]['value']" ng-change="dataChange()" />
+                        </ons-col>
+                        <ons-col class="right-align">
+                            <button class="btn file-upload" ng-click="toggleVisible(field.name)">
+                                <i class="fa text-xxlg"
+                                    ng-class="{true: 'fa-eye', false: 'fa-eye-slash'}[cardData[field.name]['visible']]"></i>
+                            </button>
+                            <button class="btn icon-picker" ng-if="cardData[field.name]['icon']" ng-click="component.iconPicker.method.showModal(field.name)">
+                                <i class="fa {{cardData[field.name]['icon']}}"></i>
+                            </button>
+                            <button class="btn text-formatter btn-light" ng-click="component.textFormatter.method.showModal(field.name)">
+                            </button>
+                        </ons-col>
+                    </ons-row>
+                </div>
+            </div>
+            <ons-list class="margin-bottom-40">
+                <ons-list-header>Choose visibility mode of your visiting card</span>
+                </ons-list-header>
+                <ons-list-item ng-if="visibilityStatus == 'Private'">
+                    <label class="left">
+                        <ons-radio name="color" input-id="radio-1" ng-model="cardData.visibility" value="Private"
+                            disabled>
+                        </ons-radio>
+                    </label>
+                    <label for="radio-1" class="center">
+                        Private
+                    </label>
+                </ons-list-item>
+                <ons-list-item ng-if="visibilityStatus != 'Private'">
+                    <label class="left">
+                        <ons-radio name="color" input-id="radio-1" ng-model="cardData.visibility" value="Private">
+                        </ons-radio>
+                    </label>
+                    <label for="radio-1" class="center">
+                        Private
+                    </label>
+                </ons-list-item>
+                <ons-list-item ng-if="visibilityStatus == 'Global'">
+                    <label class="left">
+                        <ons-radio name="color" input-id="radio-2" ng-model="cardData.visibility" value="Global"
+                            disabled>
+                        </ons-radio>
+                    </label>
+                    <label for="radio-2" class="center">
+                        Global
+                    </label>
+                </ons-list-item>
+                <ons-list-item tappable ng-if="visibilityStatus != 'Global'">
+                    <label class="left">
+                        <ons-radio name="color" input-id="radio-2" ng-model="cardData.visibility" value="Global">
+                        </ons-radio>
+                    </label>
+                    <label for="radio-2" class="center">
+                        Global
+                    </label>
+                </ons-list-item>
+                <ons-list-item ng-if="visibilityStatus == 'Shared'">
+                    <label class="left">
+                        <ons-radio name="Shared" input-id="radio-2" ng-model="cardData.visibility" value="Shared"
+                            disabled>
+                        </ons-radio>
+                    </label>
+                    <label for="radio-2" class="center">
+                        Shared
+                    </label>
+                </ons-list-item>
+                <ons-list-item tappable ng-if="visibilityStatus != 'Shared'">
+                    <label class="left">
+                        <ons-radio name="Shared" input-id="radio-2" ng-model="cardData.visibility" value="Shared">
+                        </ons-radio>
+                    </label>
+                    <label for="radio-2" class="center">
+                        Shared
+                    </label>
+                </ons-list-item>
+                <ons-list-item ng-if="visibilityStatus == 'Hidden'">
+                    <label class="left">
+                        <ons-radio name="Hidden" input-id="radio-2" ng-model="cardData.visibility" value="Hidden"
+                            disabled>
+                        </ons-radio>
+                    </label>
+                    <label for="radio-2" class="center">
+                        Hidden
+                    </label>
+                </ons-list-item>
+                <ons-list-item tappable ng-if="visibilityStatus != 'Hidden'">
+                    <label class="left">
+                        <ons-radio name="Hidden" input-id="radio-2" ng-model="cardData.visibility" value="Hidden">
+                        </ons-radio>
+                    </label>
+                    <label for="radio-2" class="center">
+                        Hidden
+                    </label>
+                </ons-list-item>
+            </ons-list>
+        </div>
+    </ons-page>
+    <ons-bottom-toolbar>
+        <button class="btn btn-block color-bg white-text" style="height: 100%;" ng-click="updateVisitingCard(cardData)">Update
+            Card</button>
+    </ons-bottom-toolbar>
+    <div ng-include="'./views/LoggedIn/VisitingCard/components/bg-colorPicker.html'"></div>
+    <div ng-include="'./views/LoggedIn/VisitingCard/components/icon-picker.html'"></div>
+    <div ng-include="'./views/LoggedIn/VisitingCard/components/text-formatter.html'"></div>
+</div>

@@ -1,0 +1,22 @@
+<ons-modal direction="up" class="enter-code-modal" id="enter-code-modal">
+    <div class="modal-container">
+        <ons-row>
+            <ons-col width="100%" class="imp-margin-bottom-10">
+                Enter Verification Code of dropbox
+            </ons-col>
+            <ons-col width="100%">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="code" placeholder="Enter Dropbox Code" ng-model="data.code">
+                    </div>
+                </form>
+            </ons-col>
+            <ons-col width="50%" class="imp-margin-bottom-10">
+                <button type="submit" class="btn btn-sm btn-outline-danger w-100" ng-click="hideEnterCodeModal(data)">Close</button>
+            </ons-col>
+            <ons-col width="50%" class="imp-margin-bottom-10">
+                <button type="submit" class="btn btn-sm btn-primary w-100" ng-click="enterDropboxCode(data)">Submit</button>
+            </ons-col>
+        </ons-row>
+    </div>
+</ons-modal>

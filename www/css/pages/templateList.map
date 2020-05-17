@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "templateList.css",
+	"sources": [
+		"../../scss/pages/templateList.scss"
+	],
+	"sourcesContent": [
+		"#templateScreen{\r\n    .select-button{\r\n        justify-content: right;\r\n        display: block;\r\n        margin-left: 50%;\r\n        margin-right: 10px;\r\n    }\r\n    ons-card{\r\n        padding: 0px !important;\r\n        margin-bottom: 15px;\r\n    }\r\n    \r\n}"
+	],
+	"names": [],
+	"mappings": ";AAAA,AACI,eADW,CACX,cAAc,CAAA;EACV,eAAe,EAAE,KAAK;EACtB,OAAO,EAAE,KAAK;EACd,WAAW,EAAE,GAAG;EAChB,YAAY,EAAE,IAAI;CACrB;;;AANL,AAOI,eAPW,CAOX,QAAQ,CAAA;EACJ,OAAO,EAAE,cAAc;EACvB,aAAa,EAAE,IAAI;CACtB"
+}

@@ -1,0 +1,33 @@
+<div ng-controller="OwnCardController" ng-init="getQrcode()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+                <div class="backdrop"></div>
+                <div class="row navbar-alignment color-bg">
+                    <div class="col col-2 text-white strong">
+                        <div class="flex-grow-1 text-white">
+                                <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                        </div>
+                    </div>
+                    <div class="col col-8 text-white strong">
+                        <div class="d-flex ">
+                            <div class="flex-grow-1 navbar-header text-center text-white">
+                                QR-Code
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="col col-2 text-white strong">
+                    </div> 
+                </div>
+            </div>
+        <ons-row class="margin-top-20">
+            <ons-col class="text-center text-md font-weight-700">
+                <h4> Share the qrcode </h4>
+            </ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>
+                <div style="margin: 4rem!important;" id="qrCodeContainer"></div>
+            </ons-col>
+        </ons-row>
+    </ons-page>
+</div>

@@ -1,0 +1,94 @@
+#OwnCardScreen {
+	div.card-bg {
+        position: relative;
+
+        font-size: 11px; //Small Screen Size
+        //Small Screen Size
+        h6 { font-size: 8.25px; }
+        h5 { font-size: 9.13px; }
+        h4 { font-size: 11px; }
+        h3 { font-size: 12.87px; }
+        h2 { font-size: 16.5px; }
+        h1 { font-size: 19px; }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0px !important;
+            padding: 0px !important;
+        }
+    }
+
+    @media only screen and (min-width: 600px) {
+        div.card-bg {
+            position: relative;
+    
+            font-size: 22px; //Tablet Screen Size
+            //Tablet Screen Size
+            h6 { font-size: 12px; }
+            h5 { font-size: 20px; }
+            h4 { font-size: 24px; }
+            h3 { font-size: 26px; }
+            h2 { font-size: 32px; }
+            h1 { font-size: 40px; }
+    
+            h1, h2, h3, h4, h5, h6 {
+                margin: 0px !important;
+                padding: 0px !important;
+            }
+        }
+    }
+    img.logo {
+        max-height: 60px;
+        max-width: 100%;
+    }
+
+    ons-modal#show-qrcode {
+		ons-row.total-row {
+			font-size: 25px;
+			border-top: 1px solid #ccc;
+			padding-top: 12px;
+		}
+
+		ons-row.total-row-top-bottom {
+			font-size: 15px;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+
+	ons-modal.show-qrcode-modal {
+		padding: 1rem;
+		width: 100%;
+
+		div.modal-container {
+			padding: 0.6rem;
+			background: #fff;
+			color: #030303;
+			padding: 1rem 0.6rem;
+			border-radius: 4px;
+		}
+
+		div.modal__content {
+			margin: 0px auto;
+		}
+		
+		ons-col {
+			margin-bottom: 10px;
+			text-align: left;
+			padding-left: 0.3rem;
+			padding-right: 0.3rem;
+
+			label {
+				font-size: 12px;
+				margin-left: 2px;
+				margin-bottom: 5px;
+				color: #424242;
+			}
+		}
+
+		ons-input {
+			width: 100%;
+		}
+	}
+}

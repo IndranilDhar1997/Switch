@@ -1,0 +1,51 @@
+<div ng-controller="AuthenticateController" id="LoginScreen">
+    <ons-page modifier="full_login">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-12">
+                    <div class="logo-container">
+                        <div class="logo"></div>
+                    </div>
+                </div>
+                <div class="col col-12 margin-top-30">
+                    <form class="text-center text-white" name="userForm" id="login-form">
+                        <h5 class="text-center strong imp-margin-bottom-10 text-xxlg left-align imp-margin-top-10 white-text">Login With Switch</h5>
+                        <div class="form-group margin-top-20" style="margin-bottom:0rem !important">
+                            <input type="email" id="email" name="email" class="form-control " placeholder="Enter your E-mail" ng-model="data.email" ng-class="{'has-error':userForm.email.$invalid && !userForm.email.$pristine}" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0rem !important">
+                            <input type="password" id="password" class="form-control" placeholder="Enter your Password" ng-model="data.password" ng-class="{'has-error':userForm.password.$invalid && !userForm.password.$pristine}" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0rem !important">
+                            <button class="btn btn-block login-button" type="submit" ng-click="normalLogin(data)" ng-disabled="userForm.$invalid">
+                                LOGIN
+                            </button>
+                        </div>
+                        <div class="text-md red-text margin-top-5 strong">{{loginError}}</div>
+                        <div class="padding-top-10 padding-bottom-20 strong text-lg">
+                            <a class="margin-right-5 amber-text" href="#!signup">Create an Account</a>
+                            <span>Or</span>
+                            <a class="margin-left-5 amber-text" href="#!forgotPassword">Forgot Password</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="btn-holders">
+            <a class="btn btn-block btn-social btn-social-logins btn-google button" ng-click="googleLogin()">
+                <span class="fa fa-google"></span> Sign in with Google
+            </a>
+            <div class="center-align text-md amber-text text-darken-1 margin-bottom-20">
+                <ons-row>
+                    <ons-col width="100%" class="margin-top-10 white-text px-4">
+                        By proceeding, you agree to our <a href="#!t&c" class="amber-text">Terms of Service</a> and
+                        <a href="#!p&p" class="amber-text">Privacy Policy</a>.
+                    </ons-col>
+                    <ons-col width="100%" class="text-15 white-text">
+                        Switch &copy; 2019
+                    </ons-col>
+                </ons-row>
+            </div>
+        </div>
+    </ons-page>
+</div>

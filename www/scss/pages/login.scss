@@ -1,0 +1,141 @@
+#LoginScreen {
+    div.btn-holders {
+        min-height: 100%;
+        padding-top: 2vh;
+        width: 100%;
+        bottom: 0px;
+        a.btn-social-logins {
+            color: white !important;
+            margin: 0px auto;
+            width: 90% !important;
+            margin-bottom: 10px;
+            height: 50px;
+            line-height: 35px;
+            font-size: 20px;
+            padding-left: 64px !important;
+        }
+        a.btn-social-logins>:first-child {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            line-height: 46px;
+            font-size: 1.6em;
+            text-align: center;
+            border-right: 1px solid rgba(0, 0, 0, 0.2);
+        }
+    }
+    .btn-google {
+        background-color: #dd4b39;
+        color: white
+    }
+    .logo-container {
+        margin: 0px auto;
+        .logo {
+            width: 100%;
+            height: 20vh;
+            margin-top: 2.5rem !important;
+            margin: 0 auto;
+            background: url(../img/logo.png) no-repeat center center;
+            background-size: contain;
+            margin-left: 25px !important;
+        }
+    }
+    .switch-title {
+        text-align: center;
+        color: white;
+        font-weight: 200;
+        font-size: 22px;
+        margin-top: 10px;
+    }
+    .button {
+        color: white !important;
+        margin-left: 5%;
+        width: 90% !important;
+    }
+    .login-button {
+        background: #ffa84c;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #ffa84c 0%, #ff7b0d 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        color: white;
+        opacity: 0.9;
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 1920px) {
+            background: url("../img/login/1920_1280.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 1600px) {
+            background: url("../img/login/1600_960.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 1280px) {
+            background: url("../img/login/1280_720.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 480px) {
+            background: url("../img/login/480_320.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 320px) {
+            background: url("../img/login/320_200.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 800px) {
+            background: url("../img/login/800_400.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 1280px) {
+            background: url("../img/login/1280_1920.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 960px) {
+            background: url("../img/login/960_1600.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 720px) {
+            background: url("../img/login/720_1280.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 320px) {
+            background: url("../img/login/320_480.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 200px) {
+            background: url("../img/login/200_320.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+    div.page--full_login__background {
+        @media only screen and (max-width: 480px) {
+            background: url("../img/login/480_800.png") no-repeat !important;
+            background-size: initial;
+        }
+    }
+}

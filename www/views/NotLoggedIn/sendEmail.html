@@ -1,0 +1,39 @@
+<div ng-controller="AuthenticateController" id="LoginScreen">
+    <ons-page modifier="full_login">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-12">
+                    <div class="logo-container">
+                        <div class="logo"></div>
+                    </div>
+                </div>
+                <div class="col col-12 margin-top-30">
+                    <form class="text-center text-white" name="userForm" novalidate>
+                        <h4 class="text-center strong imp-margin-10">Verify Your One Time Password (OTP)</h4>
+                        <h6 class="text-lg">Please provide the OTP sent to your registered email address. The OTP will expire in 10 minutes.
+                        </h6>
+                        <div class="form-group" style="margin-bottom:0rem !important">
+                            <div class="form-group margin-top-20" style="margin-bottom:0rem !important">
+                                <input type="number" id="number" class="form-control" onkeydown="javascript: return event.keyCode == 69 ? false : true" placeholder="Enter the OTP" ng-model="data.otp" required>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0rem !important">
+                            <button class="btn btn-block login-button" type="submit" ng-click="submitOTP(data)">
+                                    Submit OTP
+                                </button>
+                        </div>
+                        <div class="text-md white-text strong">{{loginError}}</div>
+                        <!-- <div class="padding-top-10 strong text-md">
+                                <a href="#!" style="color: yellow">Already Have An Account</a>
+                            </div> -->
+                        <div class="padding-top-10 padding-bottom-20 strong text-lg">
+                            <a class="margin-right-5" href="#!" class="amber-text">Already Have An Account</a>
+                            <span>Or</span>
+                            <a class="margin-left-5" class="amber-text" ng-click="resendOTP()">Resend OTP</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </ons-page>
+</div>

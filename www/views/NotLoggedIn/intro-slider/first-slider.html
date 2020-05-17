@@ -1,0 +1,24 @@
+<div ng-controller="SliderController" id="SliderScreen">
+    <ons-page modifier="slider_first full_slider1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="slider1">
+                    <img src="img/slider-1.png" class="d-block ml-auto mr-auto" width="50%">
+                </div>
+                <div class="col col-12">
+                    <div class="text-center text-white font-weight-bold text-xl pt-4">Design Your own Business Cards with Templates given on the App.</div>
+                </div>
+                <div class="col col-12" style="position: fixed; left:0; bottom: 0; width:100%;background: #0ab9e0;padding: 10px;">
+                    <div class="d-flex bd-highlight">
+                        <div class="flex-grow-1 w-100 bd-highlight">
+                            <button class="btn btn-link text-white text-md" ng-click="skipIntro()">Skip</button>
+                        </div>
+                        <div class="bd-highlight">
+                            <button class="btn btn-link text-white text-md" ng-click="nextToSecondSlide()">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ons-page>
+</div>

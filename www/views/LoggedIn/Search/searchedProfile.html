@@ -1,0 +1,65 @@
+<div ng-controller="SearchController" id="searchScreen" ng-init="searched_profile()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+            <div class="backdrop"></div>
+            <div class="row navbar-alignment color-bg">
+                <div class="col col-2 text-white strong">
+                    <div class="flex-grow-1">
+                        <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                    </div>
+                </div>
+                <div class="col col-8 text-white strong">
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 navbar-header text-center">
+                            {{userName}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-2 text-white strong">
+                </div>
+            </div>
+        </div>
+        <div class="margin-bottom-10 m-1">
+            <div class="ons-card-profile">
+                <div class="card-body">
+                    <div class="profile-pic-holder">
+                        <div class="profile-picture" ng-if="!profile_pic_url" style="background: url('img/no-image.png') no-repeat center center; background-size: cover;">
+                        </div>
+                        <div class="profile-picture" ng-if="profile_pic_url" style="background: url('{{profile_pic_url}}') no-repeat center center; background-size: cover;">
+                        </div>
+                        <div class="font-weight-bolder center-align text-lg" ng-if="userName">{{userName}}</div>
+                    </div>
+                    <div>
+                        <div class="center-align font-weight-500 text-xl" ng-if="email">{{email}}</div>
+                        <div class="title center-align text-15" ng-if="profileOrganization || profileDesignation">
+                            {{profileDesignation}} at {{profileOrganization}}</div>
+                        <hr>
+                        <div class="center-align text-15" ng-if="tagline">{{tagline}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin-top-30">
+                <div class="ons-card">
+                    <div class="card-body">
+                        <div ng-bind-html="template_data"></div>
+                    </div>
+                    <!-- <div class="card-body" ng-if="visibility == 'Global'">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-info">Add +</button>
+                        </div>
+                    </div> -->
+                    <div class="d-flex bd-highlight" ng-if="visibility == 'Global'">
+                        <div class=" p-2 flex-grow-1 bd-highlight">
+                            <select class="custom-select text-header" id="cardHolder" ng-model="cardHolderSelected" ng-change="selectedHolder(cardHolderSelected)" ng-options='ch as ch.name for ch in cardHolderData'>
+                                <option value="" selected>Choose Card Holder</option>
+                            </select>
+                        </div>
+                        <div class="p-2 bd-highlight">
+                            <button class="btn color-bg btn-sm text-white text-header" ng-click="sendRequest()">Request</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ons-page>
+</div>

@@ -1,0 +1,25 @@
+<ons-modal direction="up" class="premium-modal" id="premium">
+    <div class="modal-container" style="background: white;margin: 5px;padding: 3px;">
+        <ons-row>
+            <ons-col class="imp-margin-bottom-0">
+                <h5 class="imp-margin-bottom-5 center-align strong text-dark">Premium Career</h5>
+            </ons-col>
+        </ons-row>
+        <h5 class="center-align text-dark">Get unlimited card holders, create events and organizations</h5>
+        <ons-row class="text-dark">
+            <ons-list class="width-100">
+                <ons-list-item ng-click="payment(oneMonth)">1 Month Subscription Plan $ {{threeMonth}}</ons-list-item>
+                <ons-list-item ng-click="payment(threeMonth)">3 Months Subscription plan $ {{threeMonth}}</ons-list-item>
+                <ons-list-item ng-click="payment(sixMonth)">6 months subscription plan $ {{sixMonth}}</ons-list-item>
+                <ons-list-item ng-click="payment(oneYear)">1 year subscription plan $ {{oneYear}}</ons-list-item>
+            </ons-list>
+        </ons-row>
+        <ons-row>
+            <ons-col class="center-align margin-top-5">
+                <button class="btn btn-danger width-100" ng-click="closePremiumModal()">
+                    Close
+                </button>
+            </ons-col>
+        </ons-row>
+    </div>
+</ons-modal>

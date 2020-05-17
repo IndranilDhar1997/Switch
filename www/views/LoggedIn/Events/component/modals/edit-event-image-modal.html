@@ -1,0 +1,15 @@
+<ons-modal direction="up" class="edit-event-image-modal" id="editEventImageModal">
+    <div class="modal-container">
+        <ons-list>
+            <ons-list-item tappable ng-click="takePictureFromGallery()" ng-disabled="event_photos != null">
+                <div>Upload from Gallery</div>
+            </ons-list-item>
+            <ons-list-item tappable ng-click="removeEditEventImage()" ng-disabled="event_photos == null">
+                <div>Remove Image</div>
+            </ons-list-item>
+            <ons-list-item tappable ng-click="closeEditEventImageModal()">
+                <div>Cancel</div>
+            </ons-list-item>
+        </ons-list>
+    </div>
+</ons-modal>

@@ -1,0 +1,100 @@
+<div ng-controller="VisitingCardController" id="VisitingCardScreen" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+            <div class="backdrop"></div>
+            <div class="row navbar-alignment color-bg">
+                <div class="col col-2 text-white strong">
+                    <div class="flex-grow-1 text-white">
+                        <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                    </div>
+                </div>
+                <div class="col col-8 text-white strong">
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 navbar-header text-center text-white">
+                            Create Template
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-2 text-white strong">
+                </div>
+            </div>
+        </div>
+        <div>
+            <ons-card>
+                <div ng-bind-html="template_data"></div>
+            </ons-card>
+        </div>
+        <div class="editing-list">
+            <!-- If the field is an element such as HTML-->
+            <div class="item" ng-repeat="(key, field) in cardField">
+                <div class="" ng-if="field.format=='element'">
+                    <div ng-if="field.element=='div'">
+                        <!-- Only Background color can be changed -->
+                        <div>{{field.displayName}}</div>
+                        <div class="right">
+                            <button class="btn color-picker {{cardData[field.name]['class']}}" ng-click="component.colorPicker.method.showModal(field.name)">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="" ng-if="field.format=='imgUpload'">
+                    <!-- Image Uploading -->
+                    <div>{{field.displayName}}</div>
+                    <div class="right">
+                        <button class="btn file-upload" ng-click="toggleVisible(field.name)">
+                            <i class="fa text-xxlg"
+                                ng-class="{true: 'fa-eye', false: 'fa-eye-slash'}[cardData[field.name]['visible']]"></i>
+                        </button>
+                        <button class="btn file-upload" ng-click="imgUpload(field.name)">
+                            <i class="fa fa-upload text-xxlg"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="" ng-if="field.format=='text'">
+                    <div class="display-block">{{field.displayName}}</div>
+                    <ons-row>
+                        <ons-col>
+                            <input type="text" class="form-control" ng-model="cardData[field.name]['value']" ng-change="dataChange()" />
+                        </ons-col>
+                        <ons-col class="right-align">
+                            <button class="btn file-upload" ng-click="toggleVisible(field.name)">
+                                <i class="fa text-xxlg"
+                                    ng-class="{true: 'fa-eye', false: 'fa-eye-slash'}[cardData[field.name]['visible']]"></i>
+                            </button>
+                            <button class="btn icon-picker" ng-if="cardData[field.name]['icon']" ng-click="component.iconPicker.method.showModal(field.name)">
+                                <i class="fa {{cardData[field.name]['icon']}}"></i>
+                            </button>
+                            <button class="btn text-formatter btn-light" ng-click="component.textFormatter.method.showModal(field.name)">
+                            </button>
+                        </ons-col>
+                    </ons-row>
+                </div>
+            </div>
+            <div class="margin-bottom-50 font-weight-500 text-lg pl-4">
+                <h6>Choose visibility mode of your visiting card</h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Global" value="Global" ng-model="cardData.visibility">
+                    <label class="form-check-label" for="Global">Global</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Private" value="Private" ng-model="cardData.visibility">
+                    <label class="form-check-label" for="Private">Private</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="hidden" value="Hidden" ng-model="cardData.visibility">
+                    <label class="form-check-label" for="Hidden">Hidden</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Shared" value="Shared" ng-model="cardData.visibility">
+                    <label class="form-check-label" for="Shared">Shared</label>
+                </div>
+            </div>
+        </div>
+    </ons-page>
+    <ons-bottom-toolbar>
+        <button class="btn btn-block color-bg text-white" style="height:100%" ng-click="saveCardData(cardData)">Save Card</button>
+    </ons-bottom-toolbar>
+    <div ng-include="'./views/LoggedIn/VisitingCard/components/bg-colorPicker.html'"></div>
+    <div ng-include="'./views/LoggedIn/VisitingCard/components/icon-picker.html'"></div>
+    <div ng-include="'./views/LoggedIn/VisitingCard/components/text-formatter.html'"></div>
+</div>

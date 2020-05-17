@@ -1,0 +1,71 @@
+<div ng-controller="OwnCardController" id="OwnCardScreen" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+            <div class="backdrop"></div>
+            <div class="row navbar-alignment color-bg">
+                <div class="col col-2 text-white strong">
+                    <div class="flex-grow-1">
+                        <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                    </div>
+                </div>
+                <div class="col col-7 text-white strong">
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 navbar-header text-center">
+                            Own Cards
+                        </div>
+                    </div>   
+                </div> 
+                <div class="col col-3">
+                    <div class="flex-shrink-1 right">
+                        <button class="btn btn-fused-white btn-sm bg-light" ng-click="gotoTemplatePage()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ons-row ng-repeat="vcdata in visitingCardDetails" ng-if="visitingCardDetails.length != 0">
+            <ons-col>
+                <ons-card style="padding: 5px;">
+                    <div ng-bind-html="template_data"></div>
+                    <div class="right-align margin-top-5">
+                        <div class="left margin-left-5 red-text font-weight-bold">
+                            Status: {{ vcdata.visibility }}</div>
+                        <!-- <button class="btn btn-transparent btn-sm" ng-click="openQrcode(vcdata.uniqueId)"><i
+                                class="fa fa-qrcode" aria-hidden="true"></i></button> -->
+                        <button class="btn btn-sm btn-danger" ng-click="deleteVisitingCard(vcdata._id)">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                        <button class="btn btn-sm btn-info" ng-click="editVisitingCard(vcdata._id)">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    </div>
+                </ons-card>
+            </ons-col>
+        </ons-row>
+        <ons-row ng-if="visitingCardDetails.length == 0">
+            <ons-col>
+                <ons-card>
+                    <div class="text-info" style="font-weight: bold; font-size:medium;">No Visiting Cards Created. You
+                        need to make cards.</div>
+                </ons-card>
+            </ons-col>
+        </ons-row>
+    </ons-page>
+</div>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true" style="top:15% !important;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLongTitle" style="font-size: medium;">Let others
+                    scan the
+                    QRCODE </h6>
+            </div>
+            <div class="modal-body">
+                <div id="qrCodeContainer"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,241 @@
+#profileScreen {
+    .card {
+        // small screens
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        margin-top: 6rem !important;
+    }
+    .title {
+        color: grey;
+        font-size: 18px;
+    }
+    .social-container {
+        margin-top: 1rem;
+    }
+    .social-links {
+        background: none;
+        border: none;
+    }
+    .profile-button {
+        width: 100%;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 5px;
+        color: white;
+        background: #232b62 !important;
+        text-align: center;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    button:hover,
+    a:hover {
+        opacity: 0.7;
+    }
+    div.profile-pic-holder {
+        position: relative;
+    }
+    button.remove-image,
+    button.add-image {
+        position: absolute;
+        border-radius: 50%;
+        font-size: 12px;
+        width: 40px;
+        height: 40px;
+        background: #232b62 !important;
+        margin-top: 6rem;
+        margin-left: -1.5rem;
+        color: white;
+    }
+    button.modal-remove-image,
+    button.modal-add-image {
+        position: absolute;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin-left: -5rem;
+        margin-top: 6rem;
+    }
+    button.remove-image {
+        left: 10px;
+    }
+    .button-info {
+        background: #232b62 !important;
+        color: white;
+        font-weight: bold !important;
+        padding-top: 3px !important;
+        width: 100% !important;
+        font-size: 16px !important;
+    }
+    div.profile-picture {
+        //Phone View
+        width: 180px;
+        height: 180px;
+        margin: -7rem auto;
+        background-repeat: no-repeat;
+        margin-bottom: 10px;
+        border-radius: 60%;
+        border: 2px solid #fff;
+        position: relative;
+        margin-top: -14vh;
+    }
+    @media only screen and (min-width: 600px) {
+        // Tablet View
+        div.profile-picture {
+            //Phone View
+            width: 180px;
+            height: 180px;
+            margin: -7rem auto;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+            border-radius: 60%;
+            border: 2px solid #fff;
+            position: relative;
+            margin-top: -8vh;
+        }
+    }
+    div.modal-profile-picture {
+        margin: 0px auto;
+        background-repeat: no-repeat;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        position: relative;
+    }
+    .ons-card-profile {
+        -webkit-font-smoothing: antialiased;
+        border-radius: 5px;
+        padding: 0.6rem;
+        text-align: left;
+        word-wrap: break-word;
+        background: #fff;
+    }
+    ons-modal#update-profile {
+        ons-row.total-row {
+            font-size: 25px;
+            border-top: 1px solid #ccc;
+            padding-top: 12px;
+        }
+        ons-row.total-row-top-bottom {
+            font-size: 15px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    .form_text {
+        color: black !important;
+        font-size: 15px;
+    }
+    button.text-formatter {
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        border: 6px solid #f2f2f2;
+        padding: 0px;
+    }
+    ons-modal.update-profile-modal {
+        padding: 1rem;
+        width: 100%;
+        div.per-hour-holder {
+            position: relative;
+            text-align: right;
+            div.currency {
+                display: inline-block;
+                position: absolute;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            div.rate {
+                font-weight: bold;
+                display: inline-block;
+                margin-left: 12px;
+            }
+            div.per-hour {
+                font-weight: bold;
+                font-size: 15px;
+            }
+        }
+        div.modal-container {
+            padding: 0.6rem;
+            background: #fff;
+            color: #030303;
+            padding: 1rem 0.6rem;
+            border-radius: 4px;
+        }
+        div.modal__content {
+            margin: 0px auto;
+        }
+        .custom-select {
+            background: none;
+        }
+        ons-col {
+            margin-bottom: 10px;
+            text-align: left;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            label {
+                font-size: 12px;
+                margin-left: 2px;
+                margin-bottom: 5px;
+                color: #424242;
+            }
+        }
+        ons-input {
+            width: 100%;
+        }
+    }
+    .modal-close-button {
+        color: black;
+        font-size: 1rem;
+        background-color: transparent;
+        border-radius: 50px;
+        width: 20px;
+        padding: 4px;
+    }
+    ons-modal#profileImageModal {
+        ons-row.total-row {
+            font-size: 25px;
+            border-top: 1px solid #ccc;
+            padding-top: 12px;
+        }
+        ons-row.total-row-top-bottom {
+            font-size: 15px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    ons-modal.profile-image-modal {
+        padding: 1rem;
+        width: 100%;
+        div.modal-container {
+            padding: 0.6rem;
+            background: #fff;
+            color: #030303;
+            padding: 1rem 0.6rem;
+            border-radius: 4px;
+        }
+        div.modal__content {
+            margin: 0px auto;
+        }
+        ons-col {
+            margin-bottom: 10px;
+            text-align: left;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            label {
+                font-size: 12px;
+                margin-left: 2px;
+                margin-bottom: 5px;
+                color: #424242;
+            }
+        }
+        ons-input {
+            width: 100%;
+        }
+    }
+}

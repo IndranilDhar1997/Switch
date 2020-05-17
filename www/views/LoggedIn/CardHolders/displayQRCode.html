@@ -1,0 +1,45 @@
+<div ng-controller="CardHolderController" id="CardHolderScreen" ng-init="displayQRCode()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+            <div class="backdrop"></div>
+            <div class="row navbar-alignment color-bg">
+                <div class="col col-2 text-white strong">
+                    <div class="flex-grow-1">
+                        <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                    </div>
+                </div>
+                <div class="col col-7 text-white strong">
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 navbar-header text-center">
+                            QRCODE
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-3">
+                    <div class="flex-shrink-1 right"></div>
+                </div>
+            </div>
+            <div class="margin-top-50">
+                <div class="row">
+                    <div class="col col-12 d-flex justify-content-center">
+                        <div id="qrCodeContainer"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12 margin-top-20 margin-bottom-10">
+                    <div class="card text-center">
+                        <h5 class="card-header"></h5>
+                        <div class="card-body">
+                            <h5 class="card-title ">Please Take the screenshot of the event's code</h5>
+                            <hr>
+                            <div class="card-text">Event Code</div>
+                            <div class="text-xlg text-dark font-weight-bold"> {{qrCode}}</div>
+                            <div class="text-danger">*By giving this QR-Code, persons coming to the event will get your business card.*</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ons-page>
+</div>

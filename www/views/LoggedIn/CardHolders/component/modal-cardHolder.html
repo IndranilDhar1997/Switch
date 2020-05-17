@@ -1,0 +1,24 @@
+<ons-modal direction="up" class="card-holder-modal" id="card-holder">
+        <div class="modal-container" style="background: white;padding: 2vh;margin-left: 3vh;margin-right: 3vh;border-radius: 5%;">
+        <ons-row>
+            <ons-col class="imp-margin-bottom-0">
+                <h5 class="imp-margin-bottom-5 left-align text-dark">Card Holder Name</h5>
+            </ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>
+                <input type="text" class="form-control" id="cardHolderTitle" ng-model="cardHolderName">
+            </ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col class="right-align margin-top-5">
+                <button class="btn btn-danger" ng-click="closeCardHolderModal()">
+                    Close
+                </button>
+                <button class="btn btn-info base-color" ng-click="saveCardHolder(cardHolderName)">
+                    Save
+                </button>
+            </ons-col>
+        </ons-row>
+    </div>
+</ons-modal>

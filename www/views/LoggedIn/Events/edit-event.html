@@ -1,0 +1,81 @@
+<div ng-controller="EditEventController" id="EventScreen" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+                <div class="backdrop"></div>
+                <div class="row navbar-alignment">
+                    <div class="col col-2 text-white strong">
+                        <div class="flex-grow-1">
+                            <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                        </div>
+                    </div>
+                    <div class="col col-8 text-white strong">
+                        <div class="d-flex ">
+                            <div class="flex-grow-1 navbar-header text-center">
+                                Update Event
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="col col-2 text-white strong">
+                    </div> 
+                </div>
+            </div>
+        <div class="image-corosal-holder">
+            <div ng-if="event_photos == null">
+                <img src="img/no_image.png" style="height:200px ;position:relative; width:100%" />
+            </div>
+            <div ng-if="event_photos != null">
+                <img src="{{event_photos}}" style="height:200px ;position:relative; width:100%" />
+            </div>
+            <div style="position: absolute;right: 5px;margin-top:-3rem;">
+                <button class="btn btn-light btn-sm" style="margin-top: 2rem;" ng-click="openEditEventImageModal()">
+                    <i class="fas fa-camera-retro"></i></button>
+            </div>
+        </div>
+        <div class="card imp-margin-0" style="border-radius:0px">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" ng-model="event.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="venue">Venue</label>
+                        <input type="text" class="form-control" id="venue" ng-model="event.venue">
+                    </div>
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <input type="text" class="form-control" id="url" ng-model="event.url">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" rows="3"
+                            ng-model="event.description"></textarea>
+                    </div>
+                    <ons-row>
+                        <ons-col width="50%">
+                            <div class="form-group margin-right-end">
+                                <label for="startDate">Start Date</label>
+                                <input type="date" class="form-control" id="startDate" ng-model="event.startDate">
+                            </div>
+                        </ons-col>
+                        <ons-col width="50%">
+                            <div class="form-group margin-left-start">
+                                <label for="endDate">End Date</label>
+                                <input type="date" class="form-control" id="endDate" ng-model="event.endDate">
+                            </div>
+                        </ons-col>
+                    </ons-row>
+                    <div ng-include="'./views/LoggedIn/Events/component/timing.html'"></div>
+                </form>
+            </div>
+        </div>
+        <ons-bottom-toolbar>
+            <ons-button ng-click="updateEvent(event)"
+                class="center-align button-click padding-top-5 strong height-100 width-100 color-bg">
+                Update
+            </ons-button>
+        </ons-bottom-toolbar>
+    </ons-page>
+    <div ng-include="'./views/LoggedIn/Events/component/modals/timingModal.html'"></div>
+    <div ng-include="'./views/LoggedIn/Events/component/modals/edit-event-image-modal.html'"></div>
+</div>

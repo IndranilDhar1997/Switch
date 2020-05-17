@@ -1,0 +1,25 @@
+<ons-modal direction="up" class="scan-modal timingModal" id="scan-modal">
+    <div class="modal-container">
+        <ons-list>
+            <ons-list-item tappable ng-click="scan_qrcode()">
+                <div class="right">
+                    <ons-icon icon="fa-camera" class="list-item__icon"></ons-icon>
+                </div>
+                <div class="center">
+                    Scan Visiting Card QrCode
+                </div>
+            </ons-list-item>
+            <ons-list-item tappable ng-click="scanDropboxCode()">
+                <div class="right">
+                    <ons-icon icon="fa-dropbox" class="list-item__icon"></ons-icon>
+                </div>
+                <div class="center">
+                    Scan Dropbox QrCode
+                </div>
+            </ons-list-item>
+            <ons-list-item tappable ng-click="hideScanModal()">
+                <div class="center">Cancel</div>
+            </ons-list-item>
+        </ons-list>        
+    </div>
+</ons-modal>

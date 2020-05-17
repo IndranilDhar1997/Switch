@@ -1,0 +1,24 @@
+<!--Timings-->
+<div ng-if="!timingToDisplay.set">
+    <ons-row>
+        <ons-col width="100%">
+            <button class="btn button-timings" ng-click="showModal('.timingModal')">
+                <i class="far fa-plus-square"></i> Add/Edit Timings
+                <span class="error">{{event.timingError}}</span>
+                </ons-button>
+        </ons-col>
+    </ons-row>
+</div>
+<div ng-if="timingToDisplay.set">
+    <ons-row>
+        <ons-col width="80%" class="margin-bottom-10 text-md grey-text text-darken-2 padding-top-5">
+            <div class="strong">Timing:</div>
+            <div ng-if="timingToDisplay.timing">{{timingToDisplay.timing}} (Timing Range)</div>
+        </ons-col>
+        <ons-col width="20%" class="right-align">
+            <i class="fas fa-pencil-alt imp-margin-top-20" ng-click="showModal('.timingModal')"></i>
+        </ons-col>
+    </ons-row>
+</div>
+
+<!--Timings-->

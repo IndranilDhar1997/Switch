@@ -1,0 +1,83 @@
+<div ng-controller="ViewEventController" id="EventScreen" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+            <div class="row navbar-alignment color-bg">
+                <div class="col col-2 text-white strong">
+                    <div class="flex-grow-1">
+                        <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                    </div>
+                </div>
+                <div class="col col-7 text-white strong">
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 navbar-header text-center">
+                            Events
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-3">
+                    <div class="flex-shrink-1 right">
+                        <button class="btn btn-fused-white btn-sm bg-light" ng-click="addEvent()">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col col-12 text-center">
+                        <h5 class="text-dark font-weight-bold">Your List of Events</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="margin-bottom-20 margin-top-10">
+            <div ng-repeat="evnt in events" class="card-holder">
+                <div class="image-corosal-holder">
+                    <div ng-if="evnt.photos == null || evnt.photos == ''">
+                        <img src="img/no_image.png" style="height:200px ; width:100%" />
+                    </div>
+                    <div ng-if="evnt.photos != null">
+                        <img src="{{evnt.photos}}" style="height:200px ; width:100%" />
+                    </div>
+                </div>
+                <div class="imp-padding-10">
+                    <div class="card-body ">
+                        <div class="card-title font-weight-bold">{{evnt.name}}</div>
+                        <div class="imp-padding-top-5">{{evnt.description}}</div>
+                        <div class="imp-padding-top-5">{{evnt.url}}</div>
+                        <div class="imp-padding-top-5 font-weight-bold">{{evnt.venue}}</div>
+                        <ons-row>
+                            <ons-col width="50%" class="red-text text-darken-3 left-align font-weight-bold imp-padding-top-5">
+                                Start Date: {{startDate(evnt.startDate)}}
+                            </ons-col>
+                            <ons-col width="50%" class="red-text text-darken-3 right-align font-weight-bold imp-padding-top-5">
+                                End Date: {{endDate(evnt.endDate)}}
+                            </ons-col>
+                        </ons-row>
+                        <ons-row>
+                            <ons-col width="100%" class="text-md center-align imp-padding-top-5 imp-padding-bottom-5 font-weight-bold">
+                                Timing: {{evnt.timingFrom}} to {{evnt.timingTo}}
+                            </ons-col>
+                        </ons-row>
+                    </div>
+                    <hr>
+                    <div class="d-flex bd-highlight justify-content-end">
+                        <div class="bd-highlight" ng-hide="evnt.dropbox">
+                            <button class="btn btn-light" ng-click="createDropbox(evnt._id)">
+                                Create Dropbox
+                            </button>
+                        </div>
+                        <div class="bd-highlight px-2">
+                            <button class="btn btn-danger" ng-click="delete_event(evnt._id)">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </div>
+                        <div class="bd-highlight">
+                            <button class="btn btn-info" ng-click="edit_event(evnt._id)">
+                                <i class="far fa-edit"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ons-page>
+</div>

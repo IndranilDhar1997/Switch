@@ -1,0 +1,40 @@
+<div ng-controller="SearchController" id="searchScreen" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+            <div class="backdrop"></div>
+            <div class="row navbar-alignment color-bg">
+                <div class="col col-2 text-white strong">
+                    <div class="flex-grow-1">
+                        <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                    </div>
+                </div>
+                <div class="col col-8 text-white strong">
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 navbar-header text-center">
+                            Search People
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-2 text-white strong">
+                </div>
+            </div>
+        </div>
+        <div class="p-2 w-100 bd-highlight">
+            <div class="search-container">
+                <form class="form-inline my-lg-0">
+                    <input class="form-control mr-sm-2 search-box pl-4" type="search" placeholder="Search your Contacts Here" ng-model="searchValue" ng-change="search(searchValue)">
+                </form>
+            </div>
+        </div>
+        <div class="m-2" ng-repeat="src in searchData">
+            <ons-list>
+                <ons-list-item tappable ng-click="searchProfile(src._id)">{{src.name}}</ons-list-item>
+            </ons-list>
+        </div>
+        <div class="center-align m-1" ng-if="message">
+            <ons-list style="border-radius: 12px;">
+                <ons-list-item>{{message}}</ons-list-item>
+            </ons-list>
+        </div>
+    </ons-page>
+</div>

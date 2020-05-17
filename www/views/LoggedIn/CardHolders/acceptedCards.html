@@ -1,0 +1,30 @@
+<div ng-controller="AcceptedCardController" id="CardHolderScreen" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div class="d-flex bd-highlight navbar-alignment imp-padding-rem-1">
+            <div class="p-2 w-100 bd-highlight">
+                <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+            </div>
+        </div>
+        <div class="container" ng-if="cardHolderLength!= 0">
+            <ons-row ng-repeat="vcdata in visitingCardDetails">
+                <ons-col>
+                    <ons-card>
+                        <div ng-bind-html="template_data"></div>
+                        <div class="d-flex flex-row-reverse bd-highlight">
+                            <div class="p-2 bd-highlight">
+                                <button class="btn btn-danger btn-sm" ng-click="deleteVisitingCard(vcdata._id)">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </ons-card>
+                </ons-col>
+            </ons-row>
+        </div>
+        <div class="container" ng-if="cardHolderLength == 0">
+            <div style="text-align:center;font-weight:bold;color:blue;">
+                No Cards Added
+            </div>
+        </div>
+    </ons-page>
+</div>

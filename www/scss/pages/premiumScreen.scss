@@ -1,0 +1,115 @@
+#premiumScreen {
+    ons-modal#premium {
+        ons-row.total-row {
+            font-size: 25px;
+            border-top: 1px solid #ccc;
+            padding-top: 12px;
+        }
+        ons-row.total-row-top-bottom {
+            font-size: 15px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    ons-modal.premium-modal {
+        padding: 1rem;
+        width: 100%;
+        div.per-hour-holder {
+            position: relative;
+            text-align: right;
+            div.currency {
+                display: inline-block;
+                position: absolute;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            div.rate {
+                font-weight: bold;
+                display: inline-block;
+                margin-left: 12px;
+            }
+            div.per-hour {
+                font-weight: bold;
+                font-size: 15px;
+            }
+        }
+        div.modal-container {
+            padding: 0.6rem;
+            background: #fff;
+            color: #030303;
+            padding: 1rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 86rem;
+            margin-top: 50%;
+        }
+        div.modal__content {
+            margin: 0px auto;
+        }
+        .custom-select {
+            background: none;
+        }
+        ons-col {
+            margin-bottom: 10px;
+            text-align: left;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            label {
+                font-size: 12px;
+                margin-left: 2px;
+                margin-bottom: 5px;
+                color: #424242;
+            }
+        }
+        ons-input {
+            width: 100%;
+        }
+    }
+    .card-inline-header {
+        font-size: 1.50rem;
+        line-height: 1.3;
+        font-weight: bold;
+        color: #1c5275;
+        margin: 5px 0 10px;
+        text-align: center;
+    }
+    .card-inline {
+        font-size: 1.20rem;
+        line-height: 1;
+        color: #267790;
+        margin: 5px 0 10px;
+        text-align: center;
+    }
+    .card-inline-premium-amount {
+        font-size: 2.2rem;
+        line-height: 1;
+        color: #1c4450;
+        font-weight: bold;
+        margin: 5px 0 10px;
+        text-align: center;
+    }
+    .line {
+        width: 100%;
+        height: 0px;
+        border-bottom: 1px solid #b7aaaa;
+        opacity: 0.8;
+    }
+    .cancel-button {
+        margin-top: 5px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block;
+        width: 100% !important;
+        background: #dc3545;
+        color: white;
+    }
+    .premium-button {
+        position: fixed;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        color: white !important;
+        font-weight: bold;
+    }
+}

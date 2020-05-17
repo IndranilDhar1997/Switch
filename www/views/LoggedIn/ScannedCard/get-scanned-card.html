@@ -1,0 +1,63 @@
+<div ng-controller="ScanCardController" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div class="d-flex bd-highlight navbar-alignment imp-padding-rem-1">
+            <div class="p-2 w-100 bd-highlight">
+                <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+            </div>
+        </div>
+        <div class="card" ng-if="cardStatus == 'Exist'" style="margin-top:60%;">
+            <div class="card-body red-text font-weight-700">
+                You have already added this card to your account
+            </div>
+        </div>
+        <div class="card" ng-if="cardStatus == 'No Visiting Card'" style="margin-top:60%;">
+            <div class="card-body red-text font-weight-700">
+                No Cards Available against this QRCODE.
+            </div>
+        </div>
+        <div class="card" ng-if="cardStatus == 'Some Error Occured'" style="margin-top:60%;">
+            <div class="card-body red-text font-weight-700">
+                No Cards Available against this QRCODE.
+            </div>
+        </div>
+        <div class="card" ng-if="cardStatus != 'Exist' && cardStatus !='No Visiting Card'" margin-top:20%;>
+            <div class="card-body">
+                <div ng-bind-html="template_data"></div>
+            </div>
+            <div class="d-flex bd-highlight" ng-hide="status == 'Request Sent' || status=='Own Card'"
+                ng-if="visibility_status == 'Global'">
+                <div class="p-2 flex-grow-1 bd-highlight">
+                    <select class="custom-select" id="cardHolder" ng-model="cardHolderSelected"
+                        ng-change="selectedHolder(cardHolderSelected)"
+                        ng-options='ch as ch.name for ch in cardHolderData'>
+                        <option value="" selected>Choose Card Holder</option>
+                    </select>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <button class="btn btn-info btn-sm" ng-click="addCard()">Add+</button>
+                </div>
+            </div>
+            <div class="d-flex bd-highlight" ng-hide="status == 'Request Sent'"
+                ng-if="visibility_status == 'Private' || visibility_status == 'Shared'">
+                <div class="p-2 flex-grow-1 bd-highlight">
+                    <select class="custom-select" id="cardHolder" ng-model="cardHolderSelected"
+                        ng-change="selectedHolder(cardHolderSelected)"
+                        ng-options='ch as ch.name for ch in cardHolderData'>
+                        <option value="" selected>Choose Card Holder</option>
+                    </select>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <button class="btn btn-info btn-sm" ng-click="sendRequest()">Request</button>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end" ng-show="status == 'Request Sent'"
+                ng-if="visibility_status == 'Private'">
+                <button class="btn btn-info" ng-click="cancelRequest()">Cancel Request</button>
+            </div>
+            <div class="d-flex justify-content-end" ng-show="status == 'Request Sent'"
+                ng-if="visibility_status == 'Global'">
+                <button class="btn btn-info disabled">Added Successfully</button>
+            </div>
+        </div>
+    </ons-page>
+</div>

@@ -1,0 +1,69 @@
+<div ng-controller="ViewOrganizationController" id="OrganisationScreen" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+            <div class="row navbar-alignment color-bg">
+                <div class="col col-2 text-white strong">
+                    <div class="flex-grow-1">
+                        <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                    </div>
+                </div>
+                <div class="col col-7 text-white strong">
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 navbar-header text-center">
+                            Organization
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-3">
+                    <div class="flex-shrink-1 right">
+                        <button class="btn btn-fused-white btn-sm bg-light" ng-click="addOrganization()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-12 text-center text-white">
+                    <h5 class="text-dark font-weight-bold">Your List of Organizations</h5>
+                </div>
+            </div>
+        </div>
+        <div class="margin-bottom-20 margin-top-10">
+            <!-- <div class="card imp-padding-5 margin-bottom-10"> -->
+            <div ng-repeat="org in organisations" class="card-holder">
+                <div class="image-corosal-holder">
+                    <div ng-if="org.coverPhoto == null || org.coverPhoto == ''">
+                        <img src="img/no_image_org.png" style="height:200px ; width:100%;" />
+                    </div>
+                    <div ng-if="org.coverPhoto != null">
+                        <img src="{{org.coverPhoto}}" style="height:200px ; width:100%;" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-4">
+                        <div class="profile-picture" ng-if="org.logo == null">
+                            <img src="img/no_image_org.png" style="height:100% ; width:100%; border-radius: 10%;" />
+                        </div>
+                        <div class="profile-picture" ng-if="org.logo != null">
+                            <img src="{{org.logo}}" style="height:60px ; width:100%; border-radius: 10%;" />
+                        </div>
+                    </div>
+                    <div class="col col-8">
+                        <h5 class="color-header font-weight-bold"> {{org.name}} </h5>
+                        <div class=""><strong>Website:</strong>{{org.website}} </div>
+                        <div class=""><strong>Employee Strength:</strong>{{org.employeeStrength}}</div>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-danger btn-sm mr-1" ng-click="deleteOrganisation(org._id)">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    <button class="btn btn-secondary btn-sm color-bg" ng-click="editOrganisation(org._id)">
+                            <i class="far fa-edit"></i>
+                        </button>
+                </div>
+            </div>
+        </div>
+    </ons-page>
+</div>

@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "contact-us.css",
+	"sources": [
+		"../../scss/pages/contact-us.scss"
+	],
+	"sourcesContent": [
+		"#contactusScreen {\r\n    .contact_bg {\r\n        width: 100% !important;\r\n        height: 50vh !important;\r\n    }\r\n\r\n    .topbar { \r\n        margin-top: -23rem !important;\r\n        color: whitesmoke !important;\r\n    }\r\n    .card_contact {\r\n        padding: 0rem;\r\n        margin-top: 15rem;\r\n        margin-left: 10px;\r\n        margin-right: 10px;\r\n        padding: 1rem;\r\n        position: relative;\r\n    }\r\n    .form-title { \r\n        text-align: center;\r\n        font-weight: bolder;\r\n    }\r\n    .card-form {\r\n        padding: 1rem !important;\r\n    }\r\n}\r\n#aboutusScreen {\r\n    .about_bg {\r\n        width: 100% !important;\r\n        height: 38vh !important;\r\n    }\r\n\r\n    .topbar {\r\n        margin-top: -18rem !important;\r\n        color: whitesmoke !important;\r\n    }\r\n    .features {\r\n        display: flex !important;\r\n        justify-content: center;\r\n    }  \r\n}"
+	],
+	"names": [],
+	"mappings": ";AAAA,AACI,gBADY,CACZ,WAAW,CAAC;EACR,KAAK,EAAE,eAAe;EACtB,MAAM,EAAE,eAAe;CAC1B;;;AAJL,AAMI,gBANY,CAMZ,OAAO,CAAC;EACJ,UAAU,EAAE,iBAAiB;EAC7B,KAAK,EAAE,qBAAqB;CAC/B;;;AATL,AAUI,gBAVY,CAUZ,aAAa,CAAC;EACV,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;EAClB,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,QAAQ;CACrB;;;AAjBL,AAkBI,gBAlBY,CAkBZ,WAAW,CAAC;EACR,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,MAAM;CACtB;;;AArBL,AAsBI,gBAtBY,CAsBZ,UAAU,CAAC;EACP,OAAO,EAAE,eAAe;CAC3B;;;AAEL,AACI,cADU,CACV,SAAS,CAAC;EACN,KAAK,EAAE,eAAe;EACtB,MAAM,EAAE,eAAe;CAC1B;;;AAJL,AAMI,cANU,CAMV,OAAO,CAAC;EACJ,UAAU,EAAE,iBAAiB;EAC7B,KAAK,EAAE,qBAAqB;CAC/B;;;AATL,AAUI,cAVU,CAUV,SAAS,CAAC;EACN,OAAO,EAAE,eAAe;EACxB,eAAe,EAAE,MAAM;CAC1B"
+}

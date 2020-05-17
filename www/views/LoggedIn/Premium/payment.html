@@ -1,0 +1,18 @@
+<div ng-controller="PremiumController" id="paymentScreen" ng-init="braintreePayment()">
+    <ons-page modifier="full_bg" id="premiumScreen">
+        <div >
+            <div class=" fixed topbar d-flex bd-highlight navbar-alignment padding-left-15 padding-right-15 padding-top-20 padding-bottom-10 margin-bottom-50">
+                <div class="p-2 w-100 bd-highlight leftarrow">
+                </div>
+            </div>
+            <div class="margin-left-10 margin-right-10 margin-bottom-50">
+                <div id="dropin-wrapper">
+                    <div id="checkout-message"></div>
+                    <div id="dropin-container"></div>
+                    <button class="btn width-100 color-bg premium-button" id="submit-button">Pay Securely With Switch</button>
+                </div>
+                <button class="btn cancel-button" ng-click="gotoPremium()">Back</button>
+            </div>
+        </div>
+    </ons-page>
+</div>

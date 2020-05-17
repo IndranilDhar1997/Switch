@@ -1,0 +1,23 @@
+<div ng-controller="TemplatesController" id="templateScreen" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div>
+            <img src="https://gymnostick-storgae.sgp1.digitaloceanspaces.com/switchit-photos/constant-photos/content.jpg"
+                class="about_bg">
+            <div
+                class="fixed topbar d-flex bd-highlight navbar-alignment padding-left-15 padding-right-15 padding-top-20 padding-bottom-10">
+                <div class="p-2 w-100 bd-highlight leftarrow text-white">
+                    <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                </div>
+            </div>
+            <div class="heading-info text-white"
+                style="margin-top: -20vh;text-align: center;margin-left: 5px;font-weight: bold;margin-right: 5px;">
+                Select the Desired Template to make your Desired Visiting Card</div>
+            <div ng-repeat="photos in templatePhotos">
+                <div class="card" style="padding: 5px !important;position: relative;">
+                    <img src="{{photos.url}}" class="card-img-top" width="100%" alt="{{photos.desc}}"
+                        ng-click="viewTemplate(photos._id)">
+                </div>
+            </div>
+        </div>
+    </ons-page>
+</div>

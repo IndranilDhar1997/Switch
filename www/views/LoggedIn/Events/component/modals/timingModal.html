@@ -1,0 +1,24 @@
+<ons-modal direction="up" class="timing-modal timingModal" id="timing-modal">
+    <div class="modal-container">
+        <ons-row>
+            <ons-col width="100%" class="imp-margin-bottom-0">
+                Timing <span class="error">{{event.timing.timing_error}}</span>
+            </ons-col>
+            <ons-col width="50%" class="imp-margin-bottom-15">
+                <label for="time_timing_from">From</label>
+                <select class="custom-select" id="time_timing_from" ng-model="event.timing.timing_from" ng-options='time for time in times'>
+                    <option value="" selected>Opening</option>
+                </select>
+            </ons-col>
+            <ons-col width="50%" class="imp-margin-bottom-15">
+                <label for="time_timing_to">To</label>
+                <select class="custom-select" id="time_timing_to" ng-model="event.timing.timing_to" ng-options='time for time in times'>
+                    <option value="" selected>Closing</option>
+                </select>
+            </ons-col>
+            <ons-col width="100%" class="center-align">
+                <ons-button class="blue darken-3" ng-click="setTiming()">Done</ons-button>
+            </ons-col>
+        </ons-row>
+    </div>
+</ons-modal>

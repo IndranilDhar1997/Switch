@@ -1,0 +1,185 @@
+<div ng-controller="DashboardController" id="DashboardScreen" ng-init="init()">
+    <ons-splitter var="menuSplitter">
+        <ons-splitter-side side="left" width="220px" collapse swipeable>
+            <ons-page id="dashboard">
+                <ul class="list-group">
+                    <li class="list-group-item first-item bg-x-dark-default" ng-click="profile()">
+                        <div class="profile-picture" ng-if="profile_pic_url == null" style="background: url('img/no-image.png'); background-size: cover;"></div>
+                        <div class="profile-picture" ng-if="profile_pic_url != null" style="background: url('{{profile_pic_url}}'); background-size: cover;"></div>
+                        <div class="profile-name">
+                            {{userName}}
+                        </div>
+                    </li>
+                    <li class="list-group-item clickable" ng-if="premium_status == 'Premium'">
+                        <a class="text-x-default list-group-item list-group-item-action" ng-click="getOrganizations()">
+                            <i class="far fa-building"></i>&nbsp;&nbsp; Organization
+                        </a>
+                    </li>
+                    <li class="list-group-item clickable" ng-if="premium_status == 'Premium'">
+                        <a class="text-x-default list-group-item list-group-item-action" ng-click="getEvents()">
+                            <i class="far fa-calendar-alt"></i>&nbsp;&nbsp; Event
+                        </a>
+                    </li>
+                    <li class="list-group-item clickable" ng-if="premium_status != 'Premium'">
+                        <a class="text-x-default list-group-item list-group-item-action" ng-click="premium()">
+                            <i class="fa fa-th"></i>&nbsp;&nbsp; Go Premium!
+                        </a>
+                    </li>
+                    <li class="list-group-item clickable">
+                        <a class="text-x-default list-group-item list-group-item-action" ng-click="cardHolderPage()">
+                            <i class="far fa-folder-open"></i>&nbsp;&nbsp; Card Holder
+                        </a>
+                    </li>
+                    <li class="list-group-item clickable">
+                        <a class="text-x-default list-group-item list-group-item-action" ng-click="getOwnCard()">
+                            <i class="far fa-address-card"></i>&nbsp;&nbsp; My Cards
+                        </a>
+                    </li>
+                    <li class="list-group-item clickable">
+                        <a class="text-x-default list-group-item list-group-item-action" ng-click="aboutus()">
+                            <i class="far fa-address-card"></i>&nbsp;&nbsp; About Us
+                        </a>
+                    </li>
+                    <li class="list-group-item clickable">
+                        <a class="text-x-default list-group-item list-group-item-action" ng-click="contactus()">
+                            <i class="fas fa-phone-square"></i>&nbsp;&nbsp; Contact Us
+                        </a>
+                    </li>
+                    <li class="list-group-item clickable">
+                        <a class="text-x-default list-group-item list-group-item-action" ng-click="logout()">
+                            <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp; Logout
+                        </a>
+                    </li>
+                </ul>
+            </ons-page>
+        </ons-splitter-side>
+        <ons-splitter-content page="dashboard.html"></ons-splitter-content>
+    </ons-splitter>
+    <template id="dashboard.html">
+        <ons-page modifier="full_bg">
+            <div class="container-fluid">
+                <div class="backdrop"></div>
+                <div class="row navbar-alignment color-bg">
+                    <div class="col col-2 text-white strong">
+                        <div class="flex-grow-1 text-white">
+                            <i class="fa fa-bars list-icon" aria-hidden="true" ng-click="menuSplitter.left.open()"></i>
+                        </div>
+                    </div>
+                    <div class="col col-8 text-white strong">
+                        <div class="d-flex">
+                            <div class="flex-grow-1 navbar-header text-white" style="text-align: left !important">
+                                Dashboard
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="img/switch-banner.png" class="img-banner">
+            </div>
+            <div class="container-fluid">
+                <div ng-if="event_data.length != 0">
+                    <div class="row text-15 margin-top-10 margin-bottom-5">
+                        <div class="col col-8 imp-padding-left-5 imp-padding-right-5 card-header">
+                            Upcoming Events
+                        </div>
+                        <div class="col col-4 imp-padding-left-5 imp-padding-right-5">
+                            <div class="button-see-all text-x-default card-header text-right" ng-click="upcomingEvents()">See Details</div>
+                        </div>
+                    </div>
+                    <div class="row margin-bottom-10">
+                        <div class="col-4 imp-padding-left-5 imp-padding-right-5" ng-repeat="events in event_data">
+                            <div class="card card-events">
+                                <img src={{events.photos}} class="card-img-top card-image" alt="card1" />
+                                <div class="card-body card-body-events">
+                                    <h5 class="card-title">{{events.name}}</h5>
+                                    <div class="card-contents">{{events.descripion}}</div>
+                                    <div class="card-contents">{{startDate(events.startDate)}}</div>
+                                    <div class="card-contents">{{events.venue}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-15 margin-top-10 margin-bottom-5" ng-if="event_data.length == 0">
+                    <div class="imp-padding-left-5 imp-padding-right-5 text-x-default font-weight-700 text-center">
+                        No Upcoming Events For You.
+                    </div>
+                </div>
+                <div class="row margin-bottom-10">
+                    <div ng-if="peopleMet.length != 0">
+                        <div class="col-12 imp-padding-left-5 imp-padding-right-5 card-header">People Met Recently</div>
+                        <div class="col-12 card-people-container">
+                            <div class="card card-people" ng-repeat="pm in peopleMet">
+                                <div class="row">
+                                    <div class="col-4" ng-if="pm.profilePhoto == null">
+                                        <img src="img/no-image.png" class="card-img-top" alt="card1"
+                                            style="width: 100%;height: 12vh;object-fit: cover;padding: 3px;">
+                                    </div>
+                                    <div class="col-4" ng-if="pm.profilePhoto != null">
+                                        <img src={{pm.profilePhoto}} class="card-img-top" alt="card1"
+                                            style="width: 100%;height: 12vh;object-fit: cover;padding: 3px;">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="card-body card-body-people">
+                                            <div class="card-title">{{pm.name}}</h5>
+                                            <div class="card-contents">{{pm.primaryEmail}}</div>
+                                        </div>
+                                    </div>
+                                        <button type="button" class="btn btn-block view-card-button"
+                                            ng-click="viewRecentlyMet(pm._id)">View Card</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 imp-padding-left-5 imp-padding-right-5 card-header" ng-if="peopleMet.length == 0">
+                        <div class="card guidelines-card">
+                            <div class="card-body text-justify">
+                                <h5 class="font-weight-bold text-center text-x-default pb-2 text-lg">Steps to use Switch App</h5>
+                                <div class="guideline-section">
+                                        <div class="font-weight-bold pb-1">Dashboard Walkthrough</div>
+                                        <ul>
+                                            <li>First Section we have a Banner where there is a Image containing the Feautres Of Switch App.</li>
+                                            <li>In the Next Section we have the <strong>Events Section</strong>where all the Upcoming Events and its Details will come. </li>
+                                            <li>In the Last Section, where we get the details of People we met recently in Events and other Places.</li>
+                                        </ul>  
+                                    </div>
+                                <div class="guideline-section">
+                                    <div class="font-weight-bold pb-1">Steps to Create a Visiting Card</div>
+                                    <ul>
+                                        <li>Open the Side Bar Menu and select the <strong>My Cards</strong> Option available there.</li>
+                                        <li>On selecting the My Cards option, then you will get a option of Add Button where you will get all the pre-defined templates.</li>
+                                        <li>On Selecting a template, then another page will open where you need to add your company logo and other details.</li>
+                                        <li>In that page there will be also options for changing the background colors,font colors etc. and then you need to choose a option either the card will be private,hidden,shared and global.</li>
+                                        <li>Then Save your desired Business Card which will be available in the Own Card Page</li>
+                                        <li>Also we have a Option for card holder where you can store your Cards in Different Sections.</li>
+                                        <li><strong class="font-weight-bold">Default Card Holder-</strong>Threre is a default Card Holder in the Card Holder Section where if there is no other card holder assigned then it will by default save in the Default Card Holder Option.</li>
+                                    </ul>  
+                                </div>
+                                <div class="guideline-section">
+                                    <div class="font-weight-bold pb-1">Steps to Creating a Event</div>
+                                    <ul>
+                                        <li>Open the Side Bar Menu and select the <strong>Event</strong> Option available there.</li>
+                                        <li>A Page will Open with all the Events Created and if there is no Event it wil come blank.</li>
+                                        <li>Then there is a Add button where you can add all the details of a Particular Event.</li>
+                                        <li> After that Save the details and it will be displayed in the Event Listing Page.</li>
+                                        <li>The Same Procedure are followed for te Organization Page.</li>
+
+                                    </ul>  
+                                </div>
+                                <div class="guideline-section">
+                                    <div class="font-weight-bold pb-1">Card Types</div>
+                                    <div><strong class="font-weight-bold ">Hidden-</strong>This type of Card are hidden from all and only the user can see it.</div>
+                                    <div><strong class="font-weight-bold ">Private-</strong>This type of card can only be accessed by people whom the user gives access.</div>
+                                    <div><strong class="font-weight-bold ">Shared-</strong>This type of a Card can be shared with anyone, they just need to type the specific code.</div>
+                                    <div><strong class="font-weight-bold">Global-</strong>This type of Card can be accesed by anyone.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fixed-bottom" ng-include="'./views/LoggedIn/footer.html'"></div>
+        </ons-page>
+    </template>
+</div>

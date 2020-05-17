@@ -1,0 +1,68 @@
+<div ng-controller="PremiumController" id="premiumScreen" ng-init="init()">
+    <ons-page modifier="full_bg" id="premiumScreen">
+        <div class="container-fluid">
+            <div class="backdrop"></div>
+            <div class="row navbar-alignment color-bg">
+                <div class="col col-2 text-white strong">
+                    <div class="flex-grow-1">
+                        <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                    </div>
+                </div>
+                <div class="col col-8 text-white strong">
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 navbar-header text-center">
+                            Go Premium
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-2 text-white strong"></div>
+            </div>
+        </div class="margin-top-20">
+        <div class="margin-left-10 margin-right-10">
+            <ons-row>
+                <ons-col class="text-lg center-align pt-3"><strong>{{userName}}, grow your network faster
+                            with Switch Premium Memberships</strong></ons-col>
+            </ons-row>
+        </div>
+        <ons-card>
+            <div class="pricelist-item-header">
+                <h4 class="center-align font-weight-bold">Features</h4>
+                <h5 class="center-align">Get More Benefits with Premium Membership</h5>
+                <dl class="imp-margin-top-20">
+                    <dt class="card-inline-header">
+                            <span>1 month plan</span>
+                        </dt>
+                    <dd class="card-inline">
+                        $ {{oneMonth}}
+                    </dd>
+                    <div class="line"></div>
+                    <dt class="card-inline-header imp-margin-top-10">
+                            <span>3 months plan</span>
+                        </dt>
+                    <dd class="card-inline">
+                        $ {{threeMonth}}
+                    </dd>
+                    <div class="line"></div>
+                    <dt class="card-inline-header imp-margin-top-10">
+                            <span>6 months plan</span>
+                        </dt>
+                    <dd class="card-inline">
+                        $ {{sixMonth}}
+                    </dd>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <dt class="card-inline-header imp-margin-top-10">
+                            <span>1 Year Plan</span>
+                        </dt>
+                    <dd class="card-inline">
+                        $ {{oneYear}}
+                    </dd>
+                    <div class="line"></div>
+                </dl>
+            </div>
+            <button class="btn btn-block color-bg text-white" ng-click="openPremiumModal()">Try Premium with Switch</button>
+        </ons-card>
+</div>
+</ons-page>
+<div ng-include="'./views/LoggedIn/Premium/component/premiumModal.html'"></div>
+</div>

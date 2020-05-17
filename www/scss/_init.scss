@@ -1,0 +1,172 @@
+@import "materializecss/color-variables";
+@import "materializecss/color-classes";
+@import "variable";
+@import "fonts";
+@import "margin";
+@import "padding";
+@import "align";
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/roboto/Roboto-Regular.woff);
+}
+
+@font-face {
+    font-family: Quotations;
+    src: url(../fonts/lucida_calligraphy_italic.ttf);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: Roboto;
+    font-size: 16px;
+    text-transform: none !important;
+    width: 100%;
+}
+
+code {
+    @extend code;
+    color: #000000;
+}
+
+.roboto {
+    font-family: Roboto;
+}
+
+.quotation {
+    font-family: Quotations;
+}
+
+form {
+    font-family: Roboto;
+}
+
+.relative {
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.toUpper {
+    text-transform: uppercase;
+}
+
+.text-15 {
+    font-size: 15px;
+}
+
+.font-larger {
+    font-size: larger;
+}
+
+.text-capitalize {
+    font-variant-caps: small-caps;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+ul.list-disc {
+    li {
+        margin-left: 15px;
+        list-style-type: disc;
+        margin-bottom: 8px;
+    }
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.display-block {
+    display: block !important;
+}
+
+.display-hidden {
+    display: none !important;
+}
+
+.opacity-hidden {
+    opacity: 0 !important;
+    display: none !important;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.center {
+    text-align: center !important;
+}
+
+.center-items {
+    display: flex !important;
+    justify-content: center;
+}
+
+.white {
+    color: white !important;
+}
+
+.black-text {
+    color: #1f1f21 !important;
+}
+
+.text-normal {
+    font-size: 16px;
+}
+
+.Georgia,
+serif {
+    font-family: Georgia, serif;
+}
+
+.sans-serif {
+    font-family: sans-serif;
+}
+
+.serif {
+    font-family: serif;
+}
+
+.cursive {
+    font-family: cursive;
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+.fantasy {
+    font-family: fantasy;
+}

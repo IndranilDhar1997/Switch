@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-around align-items-center" style="height:3.0rem; background-color:#ffffff;padding-top: 6px;font-size: 2vh;">
+    <div ng-click="searchPage()" style="color: #848484;width: 25%;">
+        <i class="fas fa-search center-items"></i>
+        <div class="center">Search</div>
+    </div>
+    <div ng-click="notifications()" style="color: #848484;width: 25%;">
+        <i class="far fa-bell center-items">{{not_badge}}</i>
+        <div class="center">Notifications</div>
+    </div>
+    <div ng-click="showEnterCodeModal()" style="color: #848484;width: 25%;">
+        <i class="fas fa-hashtag center-items"></i>
+        <div class="center">Code</div>
+    </div>
+    <div ng-click="showScanModal()" style="color: #848484;width: 25%;">
+        <i class="fa fa-qrcode center-items"></i>
+        <div class="center">Scan</div>
+    </div>
+    <div ng-include="'./views/LoggedIn/Dashboard/components/modals/enter-code.html'"></div>
+    <div ng-include="'./views/LoggedIn/Dashboard/components/modals/scan-modal.html'"></div>
+</div>

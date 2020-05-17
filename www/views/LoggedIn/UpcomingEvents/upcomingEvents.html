@@ -1,0 +1,58 @@
+<div controller="UpcomingEventsController" id="DashboardScreen" ng-init="init()">
+    <ons-page modifier="full_bg">
+        <div class="container-fluid">
+            <div class="backdrop"></div>
+            <div class="row navbar-alignment color-bg">
+                <div class="col col-2 text-white strong">
+                    <div class="flex-grow-1 text-white">
+                        <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                    </div>
+                </div>
+                <div class="col col-8 text-white strong">
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 navbar-header text-center text-white">
+                            Upcoming Events
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-2 text-white strong">
+                </div>
+            </div>
+        </div>
+        <div class="margin-bottom-20 margin-top-10">
+            <div ng-repeat="evnt in upcomingEvents" class="card-upcoming-events">
+                <div>
+                    <div class="image-corosal-holder">
+                        <div ng-if="evnt.photos == null || evnt.photos == ''">
+                            <img src="img/no_image.png" style="height:100% ; width:100%" />
+                        </div>
+                        <div ng-if="evnt.photos != null">
+                            <img src="{{evnt.photos}}" class="card-upcoming-image" />
+                        </div>
+                    </div>
+                    <div class="imp-padding-10">
+                        <div>
+                            <div class="card-title">{{evnt.name}}</div>
+                            <div class="card-contents imp-padding-top-5">{{evnt.description}}</div>
+                            <div class="card-contents imp-padding-top-5">{{evnt.url}}</div>
+                            <div class="card-contents imp-padding-top-5 font-weight-bold">{{evnt.venue}}</div>
+                            <ons-row>
+                                <ons-col width="50%" class="card-contents blue-text text-darken-3 left-align font-weight-bold imp-padding-top-5">
+                                    Start Date: {{startDate(evnt.startDate)}}
+                                </ons-col>
+                                <ons-col width="50%" class="card-contents blue-text text-darken-3 right-align font-weight-bold imp-padding-top-5">
+                                    End Date: {{endDate(evnt.endDate)}}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
+                                <ons-col width="100%" class="card-header center-align imp-padding-top-5 imp-padding-bottom-5 font-weight-bold">
+                                    Timing from: {{evnt.timingFrom}} to {{evnt.timingTo}}
+                                </ons-col>
+                            </ons-row>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ons-page>
+</div>

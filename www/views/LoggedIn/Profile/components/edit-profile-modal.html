@@ -1,0 +1,68 @@
+<ons-modal direction="up" class="update-profile-modal" id="update-profile">
+    <div class="modal-container">
+        <div class="container margin-bottom-5">
+            <button type="button" class="close" data-dismiss="modal" ng-click="closeProfileModal()">&times;</button>
+            <div class="ons-card-profile">
+                <div class="card-body" style="padding:0rem !important">
+                    <div class="profile-pic-holder">
+                        <div class="modal-profile-picture" ng-if="!profile_pic_url">
+                            <img src="img/no-image.png" style="width: 8rem; height: 8rem; border-radius: 1rem; border-style: solid; border-width: 2px;" />
+                            <button class="btn btn-primary btn-sm btn-primary add-image" ng-click="openProfileImageModal()">
+                                <i class="fa fa-camera"></i>
+                            </button>
+                        </div>
+                        <div class="modal-profile-picture" ng-if="profile_pic_url">
+                            <img src="{{profile_pic_url}}" style="width: 8rem; height: 8rem; border-radius: 1rem; border-style: solid; border-width: 2px;" />
+                            <button class="btn btn-sm add-image" ng-click="openProfileImageModal()">
+                                <i class="fa fa-camera"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="margin-top-25">
+                        <form>
+                            <div class="form-group" ng-if="!userName">
+                                <label for="name" style="color: black;font-size: 15px; font-weight: bold;">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name" ng-model="profile.name">
+                            </div>
+                            <div class="form-group" ng-if="userName">
+                                <label for="name" style="color: black;font-size: 15px; font-weight: bold;">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder={{userName}} ng-model="profile.name">
+                            </div>
+                            <div class="form-group" ng-if="!profileDesignation">
+                                <label for="designation" style="color: black;font-size: 15px; font-weight: bold;">Designation</label>
+                                <input type="text" class="form-control" id="designation" placeholder="Designation" ng-model="profile.designation">
+                            </div>
+                            <div class="form-group" ng-if="profileDesignation">
+                                <label for="designation" style="color: black;font-size: 15px; font-weight: bold;">Designation</label>
+                                <input type="text" class="form-control" id="designation" placeholder={{profileDesignation}} ng-model="profile.designation">
+                            </div>
+                            <div class="form-group" ng-if="!profileOrganization">
+                                <label for="organization" style="color: black;font-size: 15px; font-weight: bold;">Organization</label>
+                                <input type="text" class="form-control" id="organization" placeholder="Organization" ng-model="profile.organization">
+                            </div>
+                            <div class="form-group" ng-if="profileOrganization">
+                                <label for="organization" style="color: black;font-size: 15px; font-weight: bold;">Organization</label>
+                                <input type="text" class="form-control" id="organization" placeholder={{profileOrganization}} ng-model="profile.organization">
+                            </div>
+                            <div class="form-group" ng-if="!tagline">
+                                <label for="tagline" style="color: black;font-size: 15px; font-weight: bold;">Tagline</label>
+                                <textarea class="form-control" id="tagline" rows="2" placeholder="Your Tagline" ng-model="profile.tagline"></textarea>
+                            </div>
+                            <div class="form-group" ng-if="tagline">
+                                <label for="tagline" style="color: black;font-size: 15px; font-weight: bold;">Tagline</label>
+                                <textarea class="form-control" id="tagline" rows="2" placeholder={{tagline}} ng-model="profile.tagline"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ons-row width="100%">
+            <ons-col class="center-align">
+                <button class="btn button-info" ng-click="updateProfile(profile)">Update <i
+                        class="fa fa-arrow-up"></i></button>
+            </ons-col>
+        </ons-row>
+    </div>
+</ons-modal>
+<div ng-include="'./views/LoggedIn/Profile/components/profile-image-modal.html'"></div>

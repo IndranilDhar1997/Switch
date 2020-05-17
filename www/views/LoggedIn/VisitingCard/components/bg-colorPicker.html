@@ -1,0 +1,59 @@
+<ons-modal direction="up" class="color-picker-modal" id="color-picker">
+    <div class="modal-container">
+        <ons-row>
+            <ons-col width="100%" class="imp-margin-bottom-0 center-align">
+                <h4 class="imp-margin-bottom-5 center-align">Color Picker</h4>
+            </ons-col>
+        </ons-row>
+        <ons-row ng-if="component.colorPicker.selectedBaseColor==null">
+            <ons-col width="100%" class="imp-margin-bottom-0 center-align">
+                <div class="pallet-holder" ng-repeat="colors in component.colorPicker.baseColors">
+                    <div class="color-pallets {{colors}} margin-bottom-10" ng-click="component.colorPicker.method.selectBaseColor(colors)"></div>
+                </div>
+            </ons-col>
+        </ons-row>
+        <ons-row ng-if="component.colorPicker.selectedBaseColor!=null">
+            <ons-col width="100%" class="imp-margin-bottom-0 center-align" ng-if="component.colorPicker.selectedBaseColor!='white' && component.colorPicker.selectedBaseColor!='transparent'">
+                <div class="pallet-holder" ng-repeat="n in [] | range:5">
+                    <div class="color-pallets {{component.colorPicker.selectedBaseColor}} lighten-{{n}} margin-bottom-10" ng-click="component.colorPicker.method.selectColor('lighten', n)"></div>
+                </div>
+                <div class="pallet-holder">
+                    <div class="color-pallets {{component.colorPicker.selectedBaseColor}} margin-bottom-10" ng-click="component.colorPicker.method.selectColor('', 0)"></div>
+                </div>
+                <div class="pallet-holder" ng-repeat="n in [] | range:4">
+                    <div class="color-pallets {{component.colorPicker.selectedBaseColor}} darken-{{n}} margin-bottom-10" ng-click="component.colorPicker.method.selectColor('darken', n)"></div>
+                </div>
+                <div class="pallet-holder" ng-repeat="n in [] | range:4">
+                    <div class="color-pallets {{component.colorPicker.selectedBaseColor}} accent-{{n}} margin-bottom-10" ng-click="component.colorPicker.method.selectColor('accent', n)"></div>
+                </div>
+            </ons-col>
+            <ons-col width="100%" class="imp-margin-bottom-0 center-align" ng-if="component.colorPicker.selectedBaseColor=='white'">
+                <div class="pallet-holder" ng-repeat="n in [] | range:1">
+                    <div class="color-pallets {{component.colorPicker.selectedBaseColor}} lighten-{{n}} margin-bottom-10" ng-click="component.colorPicker.method.selectColor('lighten', n)"></div>
+                </div>
+            </ons-col>
+            <ons-col width="100%" class="imp-margin-bottom-0 center-align" ng-if="component.colorPicker.selectedBaseColor=='transparent'">
+                <div class="pallet-holder" ng-repeat="n in [] | range:1">
+                    <div class="color-pallets {{component.colorPicker.selectedBaseColor}} lighten-{{n}} margin-bottom-10" ng-click="component.colorPicker.method.selectColor('lighten', n)"></div>
+                </div>
+            </ons-col>
+        </ons-row>
+        <ons-row class="modal-footer-row">
+            <ons-col width="33.3%">
+                <button class="btn width-100 text-xlg btn-left" ng-click="component.colorPicker.method.backToBaseColors()" ng-disabled="component.colorPicker.selectedBaseColor==null">
+                    Back
+                </button>
+            </ons-col>
+            <ons-col width="33.3%">
+                <button class="btn width-100 text-xlg btn-middle" ng-click="component.colorPicker.method.cancel()">
+                    Cancel
+                </button>
+            </ons-col>
+            <ons-col width="33.3%">
+                <button class="btn width-100 text-xlg btn-right" ng-click="component.colorPicker.method.chooseThisColor()" ng-disabled="component.colorPicker.selectedColor==null">
+                    Ok
+                </button>
+            </ons-col>
+        </ons-row>
+    </div>
+</ons-modal>

@@ -1,0 +1,42 @@
+<div ng-controller="VisitingCardController" id="contactusScreen">
+    <ons-page modifier="full_bg">
+        <div>
+            <img src="img/contact_us.jpg"
+                class="contact_bg">
+            <div
+                class=" topbar d-flex bd-highlight navbar-alignment padding-left-15 padding-right-15 padding-top-20 padding-bottom-10">
+                <div class="p-2 w-100 bd-highlight leftarrow">
+                    <i class="fas fa-arrow-left" ng-click="backButton()"></i>
+                </div>
+            </div>
+            <div class="card card_contact" style="font-size: large;">
+                <div class="row">
+                    <div class="col col-2">
+                        <img src="img/email.png" style="height: 5vh;width:5vh;">
+                    </div>
+                    <div class="col col-10 text-header">
+                        switch@gmail.com
+                    </div> 
+                    <div class="col col-2 mt-1">
+                        <img src="img/phone.png" style="height: 5vh;width:5vh;">
+                    </div>
+                    <div class="col col-10 mt-1 text-header">
+                            12345566
+                    </div>  
+                </div>
+                <div class="form-title">Send Your Queries</div>
+                <form>
+                    <div class="form-group row card-form">
+                        <input type="name" class="form-control margin-bottom-15 text-header" id="exampleFormControlInput1"
+                            placeholder="Enter Your Name">
+                        <input type="name" class="form-control margin-bottom-15 text-header" id="exampleFormControlInput1"
+                            placeholder="Enter Your Email">
+                        <input type="name" class="form-control text-header" id="exampleFormControlInput1"
+                            placeholder="Enter Your Queries Here">
+                    </div>
+                </form>
+                <button type="button" class="btn btn-default color-bg w-100 text-white text-header">Send</button>
+            </div>
+        </div>
+    </ons-page>
+</div>

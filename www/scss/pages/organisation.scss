@@ -1,0 +1,350 @@
+#OrganisationScreen {
+	div.backdrop {
+		height: 12rem;
+		background: url("../img/content.jpg") no-repeat;
+		background-size: cover;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+	}
+	div.deletedImage {
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.7);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		color: #fff;
+		padding-top: 78px;
+		text-align: center;
+	}
+
+	ons-bottom-toolbar {
+		ons-button {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	
+	ons-row.add-card-holder {
+		padding: 8px 8px;
+		ons-button {
+			width: 100%;
+			text-align: center;
+			border-radius: 0px;
+			border: 1px dashed;
+			height: 60px;
+			line-height: 60px;
+			background: rgba(255, 255, 255, 0.5);
+		}
+	}
+	.card-holder {
+		margin-bottom: 10px;
+		background: white;
+		padding: 5px;
+		margin: 7px;
+		position: relative;
+		border-radius: 2%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	div.image-corosal-holder {
+		height: 200px;
+		position: relative;
+		ons-button.add-image-btn {
+			position: absolute;
+			bottom: -2px;
+			font-size: 0.9rem;
+			line-height: 1.3rem;
+			right: 0.6rem;
+			border-radius: 5px 5px 0px 0px;
+			background: #fff;
+			color: #424242;
+			border: 0px;
+			box-shadow: none;
+		}
+		.button-add {
+			background-color: #ffffff;
+			border: none;
+			color: black;
+			font-size: 16px;
+			cursor: pointer;
+			border-radius: 19px;
+			position: fixed;
+			top: 50px;
+			right: 5px;
+			margin-top: -37px;
+			height: 9px;
+			width: 60px;
+			padding-bottom: 23px;
+			padding-left: 7px;
+			font-weight: bold;
+		}
+		.heading-info {
+			font-weight: bold;
+			text-align: center;
+			font-size: 16px !important;
+		}
+		ons-button.add-image-btn.button--material {
+			line-height: 2.1rem !important;
+		}
+		ons-carousel, ons-carousel-item {
+			height: 200px;
+			div.corosal-image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		ons-carousel-item ons-fab.deleteButton {
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+			background: #fff;
+			color: #000;
+			text-align: center;
+			height: 2rem;
+			width: 2rem;
+			span {
+				font-size: 1rem;
+				line-height: 2rem;
+			}
+		}
+		ons-carousel-item ons-fab.undoButton {
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+    		margin-left: 45px;
+			background: #fff;
+			color: #000;
+			text-align: center;
+			height: 2rem;
+			width: 2rem;
+			span {
+				font-size: 1rem;
+				line-height: 2rem;
+			}
+		}
+	}
+    div.profile-pic-holder {
+		position: relative;
+		margin-top: -6rem !important;
+    	margin-left: 4rem;
+    }
+
+    button.remove-image, button.add-image {
+        position: absolute;
+        border-radius: 50%;
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+        bottom: 0px
+    }
+
+    button.remove-image {
+        left: 10px;
+    }
+
+    button.add-image {
+        right: 10px;
+    }
+
+    .ons-card-profile{
+        -webkit-font-smoothing: antialiased;
+        box-shadow: 0 1px 2px rgba(0,0,0,.12);
+        border-radius: 0px;
+        padding:0.6rem;
+        text-align: left;
+        word-wrap: break-word;
+        background: #FFF;
+    }
+    input[type='email'], input[type='text'], select, input[type='date'], input[type='number'] {
+        height: 2.5rem;
+        font-size: 1.3rem;
+	}
+	label {
+		margin-top: 1.0rem;
+		margin-bottom: 0rem !important;
+	}
+    .update-button{
+        color: black;
+        font-weight: bold;
+    }
+    div.profile-picture {
+		margin: 0px auto;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		border: 3px solid #fff;
+		position: relative;
+		height: 5rem !important;
+	}
+	div.profile-picture-add {
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		border: 3px solid #fff;
+		position: relative;
+		height: 5rem !important;
+		width: 6rem;
+	}
+	.upload-logo-button {
+		margin-top: 2vh;
+		color: #232b62;
+		font-weight: bold;
+		border-color: #232b62;
+		background: none;
+	}
+	.form-contents {
+		font-weight: bold !important;
+		color: black !important;
+		font-size: 12px !important;
+	}
+	.organisation-card {
+		border-radius: 0px !important;
+		margin-bottom: 0px !important;
+		margin: 0px !important;
+		display: inline-block;
+		width: 100%;
+	}
+	.margin-left-start{
+		margin-left: 0.5rem !important;
+	}
+	.margin-right-end{
+		margin-right: 0.5rem !important;
+	}
+	.company-header{
+		font-size: 2.0rem;
+		line-height: 1;
+		color: #1c4450;
+		font-weight: bold;
+		margin: 5px 0 5px;
+		text-align: center;
+	}
+
+	ons-modal#coverImageModal {
+		ons-row.total-row {
+			font-size: 25px;
+			border-top: 1px solid #ccc;
+			padding-top: 12px;
+		}
+
+		ons-row.total-row-top-bottom {
+			font-size: 15px;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+
+	ons-modal.cover-image-modal {
+		padding: 1rem;
+		width: 100%;
+
+		div.modal-container {
+			padding: 0.6rem;
+			background: #fff;
+			color: #030303;
+			padding: 1rem 0.6rem;
+			border-radius: 4px;
+		}
+
+		div.modal__content {
+			margin: 0px auto;
+		}
+		
+		ons-col {
+			margin-bottom: 10px;
+			text-align: left;
+			padding-left: 0.3rem;
+			padding-right: 0.3rem;
+
+			label {
+				font-size: 12px;
+				margin-left: 2px;
+				margin-bottom: 5px;
+				color: #424242;
+			}
+		}
+
+		ons-input {
+			width: 100%;
+		}
+	}
+
+	ons-modal#logoImageModal {
+		ons-row.total-row {
+			font-size: 25px;
+			border-top: 1px solid #ccc;
+			padding-top: 12px;
+		}
+
+		ons-row.total-row-top-bottom {
+			font-size: 15px;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+
+	ons-modal.logo-image-modal {
+		padding: 1rem;
+		width: 100%;
+
+		div.per-hour-holder {
+			position: relative;
+			text-align: right;
+
+			div.currency {
+				display: inline-block;
+				position: absolute;
+				font-size: 22px;
+				font-weight: bold;
+			}
+
+			div.rate {
+				font-weight: bold;
+				display: inline-block;
+				margin-left: 12px;
+			}
+
+			div.per-hour {
+				font-weight: bold;
+				font-size: 15px;
+			}
+		}
+
+		div.modal-container {
+			padding: 0.6rem;
+			background: #fff;
+			color: #030303;
+			padding: 1rem 0.6rem;
+			border-radius: 4px;
+		}
+
+		div.modal__content {
+			margin: 0px auto;
+		}
+
+		.custom-select {
+			background: none;
+		}
+
+		ons-col {
+			margin-bottom: 10px;
+			text-align: left;
+			padding-left: 0.3rem;
+			padding-right: 0.3rem;
+
+			label {
+				font-size: 12px;
+				margin-left: 2px;
+				margin-bottom: 5px;
+				color: #424242;
+			}
+		}
+
+		ons-input {
+			width: 100%;
+		}
+	}
+}

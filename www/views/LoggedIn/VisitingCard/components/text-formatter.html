@@ -1,0 +1,47 @@
+<ons-modal direction="up" class="textFormatter-modal" id="textFormatter">
+    <div class="modal-container">
+        <ons-row>
+            <ons-col width="100%" class="imp-margin-bottom-0 center-align">
+                <h4 class="imp-margin-bottom-5 center-align">Text Formatting</h4>
+            </ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col width="100%" class="imp-margin-bottom-0 left-align">
+                <button class="btn btn-text-formatter margin-bottom-10" ng-class="{true: 'selected', false: ''}[cardData[component.textFormatter.field]['textFormatting']['bold']]"
+                    ng-click="component.textFormatter.method.toggleTexts('bold')">B</button>
+                <button class="btn btn-text-formatter margin-bottom-10" ng-class="{true: 'selected', false: ''}[cardData[component.textFormatter.field]['textFormatting']['italic']]"
+                    ng-click="component.textFormatter.method.toggleTexts('italic')">I</button>
+                <button class="btn btn-text-formatter margin-bottom-10" ng-class="{true: 'selected', false: ''}[cardData[component.textFormatter.field]['textFormatting']['underline']]"
+                    ng-click="component.textFormatter.method.toggleTexts('underline')">U</button>
+                <button class="btn btn-text-formatter margin-bottom-10" ng-class="" ng-click="component.textFormatter.method.textColor()">T</button>
+                <button class="btn btn-text-formatter margin-bottom-10" ng-class="" ng-click="component.textFormatter.method.bgColor()">BG</button>
+            </ons-col>
+            <!-- <ons-col width="50%" class="padding-left-5 padding-bottom-20 center-align">
+                <label for="fontSize">Font Size</label>
+                <select class="custom-select custom-select-sm" ng-model="component.textFormatter.selectedFontSize"
+                    ng-change="component.textFormatter.method.applyFormat('fontSize', 'text-'+component.textFormatter.selectedFontSize)">
+                    <option ng-repeat="fontSize in component.textFormatter.fontSize">{{fontSize}}</option>
+                </select>
+            </ons-col> -->
+            <ons-col width="100%" class="padding-left-5 padding-bottom-20 center-align">
+                <label for="fontStyle">Font Style</label>
+                <select class="custom-select custom-select-sm" ng-model="component.textFormatter.selectedFontStyle"
+                    ng-change="component.textFormatter.method.applyFormat('fontStyle', component.textFormatter.selectedFontStyle)">
+                    <option ng-repeat="fontStyle in component.textFormatter.fontStyle">{{fontStyle}}</option>
+                </select>
+            </ons-col>
+        </ons-row>
+        <ons-row class="modal-footer-row">
+            <ons-col width="50%">
+                <button class="btn width-100 text-xlg btn-left" ng-click="component.textFormatter.method.cancel()">
+                    Cancel
+                </button>
+            </ons-col>
+            <ons-col width="50%">
+                <button class="btn width-100 text-xlg btn-right" ng-click="component.textFormatter.method.apply()">
+                    Ok
+                </button>
+            </ons-col>
+        </ons-row>
+    </div>
+</ons-modal>

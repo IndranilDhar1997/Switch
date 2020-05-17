@@ -1,0 +1,377 @@
+#EventScreen {
+	div.backdrop {
+		height: 12rem;
+		background: url(https://gymnostick-storgae.sgp1.digitaloceanspaces.com/switchit-photos/constant-photos/content.jpg) no-repeat;
+		background-size: cover;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+	}
+	div.deletedImage {
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.7);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		color: #fff;
+		padding-top: 78px;
+		text-align: center;
+	}
+	.button-add {
+		background-color: #ffffff;
+		border: none;
+		color: black;
+		font-size: 16px;
+		cursor: pointer;
+		border-radius: 19px;
+		position: fixed;
+		top: 50px;
+		right: 5px;
+		margin-top: -37px;
+		height: 9px;
+		width: 60px;
+		padding-bottom: 23px;
+		padding-left: 7px;
+		font-weight: bold;
+	}
+	.heading-info {
+		font-weight: bold;
+		text-align: center;
+		font-size: 16px !important;
+	}
+
+	ons-bottom-toolbar {
+		ons-button {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.card-holder {
+		margin-bottom: 10px;
+		background: white;
+		padding: 5px;
+		margin: 7px;
+		position: relative;
+		border-radius: 2%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	
+	div.image-corosal-holder {
+		height: 200px;
+		position: relative;
+		ons-button.add-image-btn {
+			position: absolute;
+			bottom: -2px;
+			font-size: 0.9rem;
+			line-height: 1.3rem;
+			right: 0.6rem;
+			border-radius: 5px 5px 0px 0px;
+			background: #fff;
+			color: #424242;
+			border: 0px;
+			box-shadow: none;
+		}
+		ons-button.add-image-btn.button--material {
+			line-height: 2.1rem !important;
+		}
+		ons-carousel, ons-carousel-item {
+			height: 200px;
+			div.corosal-image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		ons-carousel-item ons-fab.deleteButton {
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+			background: #fff;
+			color: #000;
+			text-align: center;
+			height: 2rem;
+			width: 2rem;
+			span {
+				font-size: 1rem;
+				line-height: 2rem;
+			}
+		}
+		ons-carousel-item ons-fab.undoButton {
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+    		margin-left: 45px;
+			background: #fff;
+			color: #000;
+			text-align: center;
+			height: 2rem;
+			width: 2rem;
+			span {
+				font-size: 1rem;
+				line-height: 2rem;
+			}
+		}
+	}
+	div.event-details {
+		padding: 0.6rem;
+		background: #fff;
+		span.text-input--material__label--active {
+			display: none;
+		}
+		ons-input {
+			width: 100%;
+			.text-input {
+				width: 100%;
+				display: inline-block;
+				font-size: 1.3rem;
+				line-height: 1.6rem;
+				height: 2.2rem;
+			}
+		}
+		ons-button.add-data {
+			width: 100%;
+			font-size: 14px;
+			line-height: 20px;
+			margin-bottom: 10px;
+			border: 0px;
+			border-radius: 0px;
+			box-shadow: none;
+			color: #A0A0A0;
+			padding-left: 0px;
+			background: transparent;
+			text-align: left;
+		}
+		.fab, .fab--material {
+			height: 2rem;
+			width: 2rem;
+			font-size: 16px;
+		}
+		.fab__icon, .fab--material__icon {
+			line-height: 2rem;
+		}
+	}
+	ons-row.add-card-holder {
+		padding: 8px 8px;
+		ons-button {
+			width: 100%;
+			text-align: center;
+			border-radius: 0px;
+			border: 1px dashed;
+			height: 60px;
+			line-height: 60px;
+			background: rgba(255, 255, 255, 0.5);
+		}
+	}
+	
+	ons-modal#timing-modal {
+        ons-row.total-row {
+            font-size: 25px;
+            border-top: 1px solid #ccc;
+            padding-top: 12px;
+        }
+        ons-row.total-row-top-bottom {
+            font-size: 15px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    ons-modal.timing-modal {
+        padding: 1rem;
+        width: 100%;
+
+        div.per-hour-holder {
+            position: relative;
+            text-align: right;
+
+            div.currency {
+                display: inline-block;
+                position: absolute;
+                font-size: 22px;
+                font-weight: bold;
+            }
+
+            div.rate {
+                font-weight: bold;
+                display: inline-block;
+                margin-left: 12px;
+            }
+
+            div.per-hour {
+                font-weight: bold;
+                font-size: 15px;
+            }
+        }
+
+        div.modal-container {
+            padding: 0.6rem;
+            background: #fff;
+            color: #030303;
+            padding: 1rem 0.6rem;
+            border-radius: 4px;
+        }
+        div.modal__content {
+            margin: 0px auto;
+        }
+        .custom-select {
+            background: none;
+        }
+        ons-col {
+            margin-bottom: 10px;
+            text-align: left;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            label {
+                font-size: 12px;
+                margin-left: 2px;
+                margin-bottom: 5px;
+                color: #424242;
+            }
+        }
+        ons-input {
+            width: 100%;
+        }
+	}
+	
+	.event-card {
+		border-radius: 0px !important;
+		margin-bottom: 0px !important;
+		margin: 0px !important;
+		display: inline-block;
+		width: 100%;
+	}
+	.margin-left-start{
+		margin-left: 0.5rem !important;
+	}
+	.margin-right-end{
+		margin-right: 0.5rem !important;
+	}
+	.button-timings{
+		width: 100% !important;
+		background:#ececec !important;
+		font-weight: bold;
+
+	}
+	.dropbox-button{
+		background: #cedbe9; /* Old browsers */
+		background: -moz-linear-gradient(-45deg, #cedbe9 0%, #aac5de 1%, #aac5de 1%, #6199c7 2%, #6199c7 2%, #419ad6 59%, #3a8bc2 84%, #26558b 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(-45deg, #cedbe9 0%,#aac5de 1%,#aac5de 1%,#6199c7 2%,#6199c7 2%,#419ad6 59%,#3a8bc2 84%,#26558b 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(135deg, #cedbe9 0%,#aac5de 1%,#aac5de 1%,#6199c7 2%,#6199c7 2%,#419ad6 59%,#3a8bc2 84%,#26558b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		width: 100%;
+		font-weight: bold;
+		color: white !important;
+	}
+	.edit-icon-timing{
+		height: 40px;
+    	width: 34px;
+	}
+	.edit-icon{
+		margin-top: -7px;
+	}
+
+	ons-modal#eventImageModal {
+		ons-row.total-row {
+			font-size: 25px;
+			border-top: 1px solid #ccc;
+			padding-top: 12px;
+		}
+
+		ons-row.total-row-top-bottom {
+			font-size: 15px;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+
+	ons-modal.event-image-modal {
+		padding: 1rem;
+		width: 100%;
+
+		div.modal-container {
+			padding: 0.6rem;
+			background: #fff;
+			color: #030303;
+			padding: 1rem 0.6rem;
+			border-radius: 4px;
+		}
+
+		div.modal__content {
+			margin: 0px auto;
+		}
+		
+		ons-col {
+			margin-bottom: 10px;
+			text-align: left;
+			padding-left: 0.3rem;
+			padding-right: 0.3rem;
+
+			label {
+				font-size: 12px;
+				margin-left: 2px;
+				margin-bottom: 5px;
+				color: #424242;
+			}
+		}
+
+		ons-input {
+			width: 100%;
+		}
+	}
+	ons-modal#editEventImageModal {
+		ons-row.total-row {
+			font-size: 25px;
+			border-top: 1px solid #ccc;
+			padding-top: 12px;
+		}
+
+		ons-row.total-row-top-bottom {
+			font-size: 15px;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+
+	ons-modal.edit-event-image-modal {
+		padding: 1rem;
+		width: 100%;
+
+		div.modal-container {
+			padding: 0.6rem;
+			background: #fff;
+			color: #030303;
+			padding: 1rem 0.6rem;
+			border-radius: 4px;
+		}
+
+		div.modal__content {
+			margin: 0px auto;
+		}
+		
+		ons-col {
+			margin-bottom: 10px;
+			text-align: left;
+			padding-left: 0.3rem;
+			padding-right: 0.3rem;
+
+			label {
+				font-size: 12px;
+				margin-left: 2px;
+				margin-bottom: 5px;
+				color: #424242;
+			}
+		}
+
+		ons-input {
+			width: 100%;
+		}
+	}
+}
+	
