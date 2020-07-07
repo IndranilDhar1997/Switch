@@ -24,7 +24,7 @@
         "cordova-plugin-wkwebview-engine": "git+https://github.com/apache/cordova-plugin-wkwebview-engine.git#master",
         "cordova-plugin-x-toast": "^2.7.2",
         "materialize-css": "^1.0.0-rc.2",
-        "npm": "^6.10.2",
+        "npm": "^6.14.6",
         "onsenui": "^2.10.6",
         "phonegap-plugin-barcodescanner": "git+https://github.com/phonegap/phonegap-plugin-barcodescanner.git"
     },
